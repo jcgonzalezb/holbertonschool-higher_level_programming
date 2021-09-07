@@ -5,7 +5,7 @@ for i in range(1, 89):
     if i in range(20, 23):
         continue
     if i in range(30, 34):
-        continue     
+        continue
     if i in range(40, 45):
         continue
     if i in range(50, 56):
