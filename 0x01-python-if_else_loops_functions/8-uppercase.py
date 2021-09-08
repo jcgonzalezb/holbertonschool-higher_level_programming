@@ -5,5 +5,5 @@ def uppercase(str):
         if ord(i) >= 97 and ord(i) < 123:
             new_string += chr(ord(i)-32)
         else:
-            new_string += i
+            new_string += 
     print(new_string)
