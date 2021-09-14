@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def only_diff_elements(set_1, set_2):
-    if set_1 and set_2 is not None:
+    if set_1 or set_2 is not None:
         new_set = []
         not_unique_list = []
         final_list = []
