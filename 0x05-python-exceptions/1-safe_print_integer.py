@@ -6,4 +6,3 @@ def safe_print_integer(value):
         pass
     finally:
         return value
-
