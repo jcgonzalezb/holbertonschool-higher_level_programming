@@ -3,7 +3,7 @@ def safe_print_integer(value):
     isInt = True
     try:
         int(value)
-    except ValueError:
+    except (TypeError, ValueError):
         isInt = False
     if isInt:
         print('{:d}'.format(value), end='\n')
