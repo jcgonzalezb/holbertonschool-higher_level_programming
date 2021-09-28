@@ -8,6 +8,6 @@ def safe_print_division(a, b):
     except (ZeroDivisionError, TypeError):
         f = None
     finally:
-        print('Inside result: {}'.format(f), end='\n')
+        print('Inside result: {}'.format(f))
         return f
 
