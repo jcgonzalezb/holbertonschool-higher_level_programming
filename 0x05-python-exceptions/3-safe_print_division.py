@@ -9,7 +9,7 @@ def safe_print_division(a, b):
         c = None
     finally:
         if f > 0:
-            print('Inside result: {:.1f}'.format(f), end='\n')
+            print('Inside result: {}'.format(f), end='\n')
             return f
         else:
             print('Inside result: {}'.format(c), end='\n')
