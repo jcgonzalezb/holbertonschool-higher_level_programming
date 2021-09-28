@@ -5,7 +5,7 @@ def safe_print_division(a, b):
         f = 0
         c = a // b
         f = float(c)
-    except ZeroDivisionError:
+    except (ZeroDivisionError, TypeError):
         pass
     finally:
         if f > 0:
