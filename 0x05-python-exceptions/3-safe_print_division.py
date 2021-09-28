@@ -6,11 +6,8 @@ def safe_print_division(a, b):
         c = a // b
         f = float(c)
     except (ZeroDivisionError, TypeError):
-        c = None
+        f = None
     finally:
-        if f > 0:
-            print('Inside result: {}'.format(f), end='\n')
-            return f
-        else:
-            print('Inside result: {}'.format(c), end='\n')
-            return None
+        print('Inside result: {}'.format(f), end='\n')
+        return f
+
