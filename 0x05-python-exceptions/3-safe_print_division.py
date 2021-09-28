@@ -8,7 +8,6 @@ def safe_print_division(a, b):
         print('Inside result: {:.1f}'.format(f), end='\n')
     except ZeroDivisionError:
         print('Inside result: None', end='\n')
-        return None
     finally:
         if f > 0:
             return f
