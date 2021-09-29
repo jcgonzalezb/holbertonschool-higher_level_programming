@@ -116,6 +116,11 @@ class Square:
         Returns:
             Square with the character #.
         """
+        if self.__position[1] > 0:
+            print('')
+        else:
+            pass
+
         if self.__size == 0:
             print('')
         else:
