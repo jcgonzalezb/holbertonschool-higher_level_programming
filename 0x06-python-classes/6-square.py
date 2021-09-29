@@ -14,13 +14,17 @@ class Square:
 
     Args:
         size (int): size of a side in square
+        position
 
     functions:
-        __init__(self, size)
+        __init__(self, size=0, position=(0, 0))
         def size(self)
         def size(self, value)
+        def position(self)
+        def position(self, value)
         area(self)
         def my_print(self)
+
     """
     def __init__(self, size=0, position=(0, 0)):
         """
@@ -79,7 +83,7 @@ class Square:
         """
         return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         """
         Position function.
