@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-Task 2.
+Task 3.
 Write a class Square that defines a square.
-Private instance attribute: size
+Private instance attribute: size and public
+attribute area
 """
 
 
@@ -14,8 +15,9 @@ class Square:
     Args:
         size (int): size of a side in square
 
-    Returns:
-        Current square area.
+    functions:
+        __init__(self, size)
+        area(self)
     """
     def __init__(self, size=0):
         """
@@ -39,9 +41,6 @@ class Square:
     def area(self):
         """
         Function that calculates the current square area.
-
-        Args:
-            __size(int): size of a side of the square.
 
         Returns:
             Current square area.
