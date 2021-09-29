@@ -17,6 +17,8 @@ class Square:
 
     functions:
         __init__(self, size)
+        def size(self)
+        def size(self, value)
         area(self)
     """
     def __init__(self, size=0):
@@ -31,10 +33,12 @@ class Square:
     @property
     def size(self):
         """
-        Initialization function.
+        Size function.
+        This fuction has getter property.
 
-        Attributes:
-            __size(int): size of a side of the square.
+        Returns:
+            size of a side of the square.
+
         """
         return self.__size
 
@@ -42,9 +46,10 @@ class Square:
     def size(self, value):
         """
         Size function.
+        This fuction has setter property.
 
-        Attributes:
-            __size(int): size of a side of the square.
+        Args:
+            value: Assign size to value.
 
         Size must be an integer, otherwise raise a TypeError
         exception with the message size must be an integer.
