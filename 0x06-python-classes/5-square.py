@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Task 4.
+Task 5.
 Write a class Square that defines a square.
 Private instance attribute: size and public
 attribute area.
