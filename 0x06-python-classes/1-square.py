@@ -12,24 +12,10 @@ class Square:
     Private instance attribute.
     """
     def __init__(self, size="0"):
-        self.__size = size
         """
         Initialization function.
-        Args:
-            self (int): Used to refer to itself.
-            size (int): Size of the square.
 
-        Returns:
-            int: The return value. Size value.
+        Attributes:
+            size: Size of a side of the square.
         """
-    @property
-    def size(self):
-        """
-        Size function.
-        Args:
-            self (int): Used to refer to itself.
-
-        Returns:
-            int: The return value. Size value.
-        """
-        return self.__size
+        self.__size = size
