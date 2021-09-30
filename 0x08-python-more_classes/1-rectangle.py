@@ -25,11 +25,11 @@ class Rectangle:
         """
         Initialization function.
         Attributes:
-            __width(int): horizontal side of a rectangle.
-            __height(int): vertical side of a rectangle.
+            width(int): horizontal side of a rectangle.
+            height(int): vertical side of a rectangle.
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
