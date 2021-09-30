@@ -23,6 +23,7 @@ class Rectangle:
         def area(self)
         def perimeter(self)
         def __str__(self)
+        def __repr__(self)
     """
     def __init__(self, width=0, height=0):
         """
