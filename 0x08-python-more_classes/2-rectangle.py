@@ -105,7 +105,9 @@ class Rectangle:
         """
         perimeter = 2 * int(self.__width) + (2 * int(self.__height))
 
-        if self.__width < 0 or self.__height < 0:
+        if self.__width <= 0:
+            return 0
+        elif self.__height <= 0:
             return 0
         else:
             return perimeter
