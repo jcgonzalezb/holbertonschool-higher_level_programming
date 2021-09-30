@@ -6,7 +6,7 @@ Private instance attributes: width and height.
 """
 
 
-class Rectangle:
+class Rectangle():
     """
     class Rectangle in which width and height are
     defined as Private instance attributes.
@@ -16,22 +16,22 @@ class Rectangle:
 
     functions:
         __init__(self, width=0, height=0)
-        def width(self)
-        def width(self, value)
-        def height(self)
-        def height(self, value)
-        def area(self)
-        def perimeter(self)
-        def __str__(self)
-        def __repr__(self)
-        def __del__(self)
+        width(self)
+        width(self, value)
+        height(self)
+        height(self, value)
+        area(self)
+        perimeter(self)
+        __str__(self)
+        __repr__(self)
+        __del__(self)
 
     Public class attribute:
         number_of_instances (int): number of instances created and not deleted
         print_symbol (any type): used to print string representation
     """
     number_of_instances = 0
-    print_symbol = "#"
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """
@@ -150,8 +150,8 @@ class Rectangle:
             number_of_instances: Decremented during each
             instance deletion
         """
-        print('Bye rectangle...')
         self.__class__.number_of_instances -= 1
+        print('Bye rectangle...')
 
     def __repr__(self):
         """
@@ -160,4 +160,4 @@ class Rectangle:
             String representation of the rectangle to be able
             to recreate a new instance
         """
-        return 'Rectangle({:d}, {:d})'.format(self.__width, self.__height)
+        return 'Rectangle({}, {})'.format(self.width, self.height)
