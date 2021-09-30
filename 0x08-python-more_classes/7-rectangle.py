@@ -137,7 +137,9 @@ class Rectangle():
             return ""
         elif self.__height == 0:
             return ""
-        return '\n'.join(['#' * self.__width for rows in range(self.__height)])
+        sym = '\n'.join([str(self.print_symbol) * self.__width
+                        for rows in range(self.__height)])
+        return sym
 
     def __del__(self):
         """
@@ -160,4 +162,4 @@ class Rectangle():
             String representation of the rectangle to be able
             to recreate a new instance
         """
-        return 'Rectangle({}, {})'.format(self.width, self.height)
+        return 'Rectangle({:d}, {:d})'.format(self.width, self.height)
