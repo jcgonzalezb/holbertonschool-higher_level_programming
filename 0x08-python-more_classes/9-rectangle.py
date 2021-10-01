@@ -192,9 +192,9 @@ class Rectangle():
     @classmethod
     def square(cls, size=0):
         """
-        Function that compairs the sizes of two rectangles.
+        Function that converts a rectangles in a square.
         Returns:
-            biggest rectangle based on the area. rect_1 if both have
-            the same area value.
+            that returns a new Rectangle instance with
+            width == height == size.
         """
         return cls(size, size)
