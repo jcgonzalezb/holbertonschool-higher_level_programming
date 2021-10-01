@@ -167,7 +167,7 @@ class Rectangle():
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
-        Function that compairs the sizes of two rectangles. 
+        Function that compairs the sizes of two rectangles.
         Returns:
             biggest rectangle based on the area. rect_1 if both have
             the same area value.
