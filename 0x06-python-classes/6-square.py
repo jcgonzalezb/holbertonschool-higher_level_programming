@@ -35,8 +35,8 @@ class Square:
             __position(tuple): position inside a square.
 
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -65,11 +65,11 @@ class Square:
         If size is less than 0, raise a ValueError exception
         with the message size must be >= 0.
         """
-        if type(size) != int:
+        if type(value) != int:
             raise TypeError("size must be an integer")
-        if size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = size
+        self.__size = value
 
     @property
     def position(self):
@@ -84,30 +84,17 @@ class Square:
         return self.__position
 
     @position.setter
-    def position(self, value):
+    def position(self, position):
+        """ Set the position of a square
         """
-        Position function.
-        This fuction has setter property.
-
-        Args:
-            value: Assign position to value.
-
-        Position must be a tuple of 2 positive integers,
-        otherwise raise a TypeError exception with the
-        message position must be a tuple of 2 positive integers
-
-        If size is less than 0, raise a ValueError exception
-        with the message size must be >= 0.
-        """
-        if not (type(position) is tuple and
+        if not (isinstance(position, tuple) and
                 len(position) == 2 and
-                type(position[0]) is int and
-                type(position[1]) is int and
+                isinstance(position[0], int) and
+                isinstance(position[1], int) and
                 position[0] >= 0 and
                 position[1] >= 0):
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = position
+        self.__position = position
 
     def area(self):
         """
