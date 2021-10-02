@@ -65,11 +65,11 @@ class Square:
         If size is less than 0, raise a ValueError exception
         with the message size must be >= 0.
         """
-        if type(value) != int:
+        if type(size) != int:
             raise TypeError("size must be an integer")
-        if value < 0:
+        if size < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value
+        self.__size = size
 
     @property
     def position(self):
@@ -99,12 +99,15 @@ class Square:
         If size is less than 0, raise a ValueError exception
         with the message size must be >= 0.
         """
-        if type(value) is not tuple or len(value) != 2 or \
-           type(value[0]) is not int or type(value[1]) \
-           is not int or value[0] < 0 or value[1] < 0:
+        if not (type(position) is tuple and
+                len(position) == 2 and
+                type(position[0]) is int and
+                type(position[1]) is int and
+                position[0] >= 0 and
+                position[1] >= 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.__position = value
+            self.__position = position
 
     def area(self):
         """
