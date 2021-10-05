@@ -1,5 +1,11 @@
 #!/usr/bin/python3
+"""
+This project module supplies one function that adds 2 integers.
+"""
+
+
 def add_integer(a, b=98):
+    """This is a function that adds 2 integers."""
     if isinstance(a, float):
         a = int(a)
 
