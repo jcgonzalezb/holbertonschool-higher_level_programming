@@ -6,7 +6,9 @@ a square with the character #.
 
 
 def print_square(size):
-    """size is the size length of the square.
+    """This is a method that prints a square with 
+    the character #.
+    -size is the size length of the square.
     -size must be an integer, otherwise raise a 
     TypeError exception with the message size must
     be an integer.
