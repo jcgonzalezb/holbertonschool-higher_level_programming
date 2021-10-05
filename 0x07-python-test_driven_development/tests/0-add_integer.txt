@@ -15,3 +15,27 @@ the message a must be an integer or b must be an integer.
 
 	>>> print(add_integer(8,2))
 	10
+
+    >>> print(add_integer(5, 6))
+    11
+
+    >>> print(add_integer(3.2, 4.7))
+    7
+
+    >>> print(add_integer(9, 0))
+    9
+
+    >>> print(add_integer(0, 8))
+    8
+
+    >>> print(add_integer(10.1, 2.5))
+    12
+
+    >>> print(add_integer(2))
+    100
+    
+    >>> print(add_integer(-4, 10))
+    6
+
+    >>> print(add_integer(4, -10))
+    -6
