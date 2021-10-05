@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 This project module supplies one function that adds 2 integers.
+Contains one method that returns an integer which results from
+the addition of two integers.
 """
 
 
