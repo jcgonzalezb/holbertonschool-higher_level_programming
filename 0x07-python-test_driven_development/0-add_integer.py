@@ -5,7 +5,13 @@ This project module supplies one function that adds 2 integers.
 
 
 def add_integer(a, b=98):
-    """This is a function that adds 2 integers."""
+    """This is a function that adds 2 integers.
+    a and b must be integers or floats, otherwise raise
+    a TypeError exception with the message a must be an
+    integer or b must be an integer.
+    Returns:
+        An integer: the addition of a and b.
+    """
     if isinstance(a, float):
         a = int(a)
 
