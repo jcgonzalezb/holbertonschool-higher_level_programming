@@ -1,0 +1,17 @@
+==========================
+2. Say my name
+==========================
+
+Function say_my_name
+=====================
+
+Function that prints My name is <first name> <last name>.
+-First_name and last_name must be strings otherwise, 
+raise a TypeError exception with the message first_name
+must be a string or last_name must be a string
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+=====================
+
+
