@@ -21,6 +21,9 @@ exception with the message division by zero.
 to 2 decimal places.
 -Returns a new matrix
 
+Import module:
+======================
+
 	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
 =====================

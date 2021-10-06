@@ -12,6 +12,9 @@ exception with the message text must be a string.
 -There should be no space at the beginning or at
 the end of each printed line.
 
+Import module:
+======================
+
 	>>> text_indentation = __import__('5-text_indentation').text_indentation
 
 =====================
@@ -70,5 +73,3 @@ the end of each printed line.
 
     >>> text_indentation(""" """)
      
-    
-    
