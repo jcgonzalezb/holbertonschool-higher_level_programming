@@ -5,9 +5,9 @@
 Function text_indentation
 =====================
 
-Function that prints a text with 2 new lines after 
+Function that prints a text with 2 new lines after
 each of these characters: ., ? and :.
--text must be a string, otherwise raise a TypeError 
+-text must be a string, otherwise raise a TypeError
 exception with the message text must be a string.
 -There should be no space at the beginning or at
 the end of each printed line.
@@ -46,11 +46,6 @@ Import module:
 	...
 	NameError: name 'inf' is not defined
 
-    >>> text_indentation()
-    Traceback (most recent call last):
-    ...
-    TypeError: text_indentation() missing 1 required positional argument: 'text'
-
     >>> text_indentation("""text""")
     text
 
@@ -72,3 +67,41 @@ Import module:
     text
 
     >>> text_indentation(""" """)
+
+
+    >>> text_indentation(True)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation({212})
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation("This is a test")
+    This is a test
+
+    >>> text_indentation("""This is a test:""")
+    This is a test:
+    <BLANKLINE>
+
+    >>> text_indentation(5 + 3j)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation([2, 3])
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
