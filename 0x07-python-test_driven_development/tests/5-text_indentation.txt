@@ -58,30 +58,30 @@ Import module:
 
     >>> text_indentation("""""")
 
-	>>> text_indentation(0)
-	Traceback (most recent call last):
-	...
-	TypeError: text must be a string
+    >>> text_indentation(0)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
 
-	>>> text_indentation(-2.3)
-	Traceback (most recent call last):
-	...
-	TypeError: text must be a string
+    >>> text_indentation(-2.3)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
 
-	>>> text_indentation(1, 1)
-	Traceback (most recent call last):
-	...
-	TypeError: text_indentation() takes 1 positional argument but 2 were given
+    >>> text_indentation(1, 1)
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() takes 1 positional argument but 2 were given
 
-	>>> text_indentation(nan)
-	Traceback (most recent call last):
-	...
-	NameError: name 'nan' is not defined
+    >>> text_indentation(nan)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'nan' is not defined
 
-	>>> text_indentation(float(inf))
-	Traceback (most recent call last):
-	...
-	NameError: name 'inf' is not defined
+    >>> text_indentation(float(inf))
+    Traceback (most recent call last):
+    ...
+    NameError: name 'inf' is not defined
 
     >>> text_indentation("""text""")
     text
