@@ -7,7 +7,7 @@ Function print_square
 
 Function that prints prints a square with the character #.
 -size is the size length of the square.
--size must be an integer, otherwise raise a TypeError 
+-size must be an integer, otherwise raise a TypeError
 exception with the message size must be an integer.
 -if size is less than 0, raise a ValueError exception with
 the message size must be >= 0.
