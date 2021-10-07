@@ -71,10 +71,10 @@ Import module:
 	...
 	NameError: name 'nan' is not defined
 
-	>>> print_square(float(inf))
+	>>> print_square(float("inf"))
 	Traceback (most recent call last):
 	...
-	NameError: name 'inf' is not defined
+	TypeError: size must be an integer
 
 	>>> print_square(True)
 	#
