@@ -6,9 +6,12 @@ Function say_my_name
 =====================
 
 Function that prints My name is <first name> <last name>.
--First_name and last_name must be strings otherwise, 
+-First_name and last_name must be strings otherwise,
 raise a TypeError exception with the message first_name
 must be a string or last_name must be a string
+
+Import module:
+======================
 
 	>>> say_my_name = __import__('3-say_my_name').say_my_name
 
@@ -17,8 +20,20 @@ must be a string or last_name must be a string
 	>>> say_my_name("John", "Smith")
 	My name is John Smith
 
+	>>> say_my_name("  John  ", "  Smith")
+	My name is   John     Smith
+
 	>>> say_my_name("John", "midddle Smith")
 	My name is John midddle Smith
+
+	>>> say_my_name(("Thomas"), "Anderson")
+	My name is Thomas Anderson
+
+	>>> say_my_name(("Thomas A."), "Anderson")
+	My name is Thomas A. Anderson
+
+	>>> say_my_name(("  Thomas  "), "  Anderson")
+	My name is   Thomas     Anderson
 
 	>>> say_my_name("Bob")
 	My name is Bob 
@@ -58,4 +73,17 @@ must be a string or last_name must be a string
 	...
 	TypeError: first_name must be a string
 
+	>>> say_my_name(True, False)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
 
+	>>> say_my_name({"Thomas"}, "Anderson")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+	>>> say_my_name(("Thomas A.", "C"), "Anderson")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
