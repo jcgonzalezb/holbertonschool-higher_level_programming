@@ -6,7 +6,8 @@ list of available attributes and methods of an object.
 
 
 def lookup(obj):
-    """This is a method that returns the list of available
+    """
+    This is a method that returns the list of available
     attributes and methods of an object.
     Returns:
         Returns a list object.
