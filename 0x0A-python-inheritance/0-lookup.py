@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 """
-Module 0-lookup
-Contains method lookup that returns list of object's attribute and methods
+This project module contains one method that returns the
+list of available attributes and methods of an object.
 """
 
 
 def lookup(obj):
-    """returns list of object's attribute and methods"""
+    """
+    This is a method that returns the list of available
+    attributes and methods of an object.
+    Returns:
+        Returns a list object.
+    """
     return dir(obj)
