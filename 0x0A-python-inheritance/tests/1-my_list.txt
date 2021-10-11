@@ -1,0 +1,20 @@
+==========================
+0. My list
+==========================
+
+Function print_sorted
+=====================
+
+Prints the list, but sorted (ascending sort).
+Assume that all the elements of the list will
+be of type int.
+
+Import module:
+======================
+
+	>>> MyList = __import__('1-my_list').MyList
+
+=====================
+
+    >>> my_list.print_sorted(1)
+	1
