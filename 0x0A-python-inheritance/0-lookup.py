@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This project module contains one method that returns
-the list of available attributes and methods of an object.
+This project module contains one method that returns the
+list of available attributes and methods of an object.
 """
 
 
