@@ -12,4 +12,6 @@ def read_file(filename=""):
     Returns:
         Prints a text file.
     """
-    return dir(obj)
+    with open(filename, 'r', encoding='utf8') as f:
+        for line in f:
+            print(line.strip())
