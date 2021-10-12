@@ -7,11 +7,11 @@ JSON string.
 
 
 import json
-
+from collections import OrderedDict
 
 def to_json_string(my_obj):
     """
     This is a method that returns an object (Python 
     data structure) represented by a JSON string.
     """
-    return json.dumps(my_obj)
+    return json.dumps(my_obj, sort_keys=True)
