@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 This project module contains one method that returns
-the JSON representation of an object (string).
+an object (Python data structure) represented by a
+JSON string.
 """
 
 
@@ -10,7 +11,7 @@ import json
 
 def from_json_string(my_str):
     """
-    This is a method that returns the JSON representation
-    of an object (string).
+    This is a method that returns an object
+    (Python data structure) represented by a JSON string.
     """
-    return json.dumps(my_str)
+    return json.loads(my_str)
