@@ -7,7 +7,6 @@ JSON string.
 
 
 import json
-from collections import OrderedDict
 
 def to_json_string(my_obj):
     """
