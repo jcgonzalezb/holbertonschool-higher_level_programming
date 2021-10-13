@@ -12,5 +12,5 @@ def read_file(filename=""):
     Returns:
         Prints a text file.
     """
-    with open(filename, 'r', encoding='utf8') as reader:
-        print(reader.read())
+    with open(filename, 'r', encoding='utf8') as f:
+        f.readlines()
