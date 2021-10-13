@@ -15,5 +15,5 @@ def append_write(filename="", text=""):
     """
     with open(filename, 'a', encoding='utf8') as f:
         nb_characters = f.write(''.join(text))
-     
+
     return nb_characters
