@@ -5,7 +5,7 @@ Public instance attributes: first_name, last_name and age.
 """
 
 
-class Student:
+class Student():
     """
     class Student in which def to_json(self) is
     defined as Public instance method.
@@ -32,6 +32,10 @@ class Student:
         This is a method that returns the dictionary description
         with simple data structure (list, dictionary, string,
         integer and boolean) for JSON serialization of an object.
+
+        Return:
+            Only return dict of attrs given to us
+            Return entire dict if no attrs given
         """
         if attrs and all(isinstance(s, str) for s in attrs):
             dic = {}
