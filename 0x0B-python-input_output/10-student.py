@@ -37,11 +37,11 @@ class Student():
             Only return dict of attrs given to us
             Return entire dict if no attrs given
         """
-        if attrs and all(isinstance(s, str) for s in attrs):
+        if attrs is None:
+            return self.__dict__
+        else:
             dic = {}
             for att in attrs:
                 if att in self.__dict__.keys():
                     dic[att] = self.__dict__[att]
             return dic
-        else:
-            return self.__dict__
