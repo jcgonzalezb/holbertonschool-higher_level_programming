@@ -1,28 +1,125 @@
 #!/usr/bin/python3
 """
-Write a class called Base.
+Write the class Rectangle that inherits from Base.
 """
 
+from models.base import Base
 
-class Base:
-    """
-    class Base in which nb_objects is defined
-    as Private instance attribute.
-    """
-    __nb_objects = 0
 
-    def __init__(self, id=None):
+class Rectangle(Base):
+    """
+    Class Rectangle inherits from class Base. Width, height, x and y
+    are defined as private instance attributes.
+    Methods:
+        __init__(self, width, height, x=0, y=0, id=None)
+        width(self)
+        width(self, value)
+        height(self)
+        height(self, value)
+        x(self)
+        x(self, value)
+        y(self)
+        y(self, value)
+    """
+
+    def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initialization function.
-        Attributes:
-        id: Number of identification.
-        If id is not None, assign the public instance
-        attribute id with this argument value. Otherwise,
-        increment __nb_objects and assign the new value
-        to the public instance attribute id.
+        Private instance attributes:
+        __width: Width of the rectangle.
+        __height: Height of the rectangle.
+        __x: x of the rectangle.
+        __y: y of the rectangle.
+        Each with its own public getter and setter.
+        Call the super class with id - this super call with use the
+        logic of the __init__ of the Base class.
         """
-        if id is None:
-            Base.__nb_objects += 1
-            self.id = Base.__nb_objects
-        else:
-            self.id = id
+        super().__init__(id)
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
+
+    @property
+    def width(self):
+        """
+        Width function.
+        This function has getter property.
+        Returns:
+            Width of the rectangle.
+        """
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """
+        Set the width function.
+        This function has setter property.
+
+        Args:
+            value: Width of the rectangle.
+        """
+        self.__width = value
+
+    @property
+    def height(self):
+        """
+        Height function.
+        This function has getter property.
+        Returns:
+            Height of the rectangle.
+        """
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """
+        Set the height function.
+        This function has setter property.
+
+        Args:
+            value: Height of the rectangle.
+        """
+        self.__height = value
+
+    @property
+    def x(self):
+        """
+        x function.
+        This function has getter property.
+        Returns:
+            x of the rectangle.
+        """
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """
+        Set the x of the rectangle.
+        This function has setter property.
+
+        Args:
+            value: x of the rectangle.
+        """
+        self.__x = value
+
+    @property
+    def y(self):
+        """
+        y function.
+        This function has getter property.
+        Returns:
+            y of the rectangle.
+        """
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """
+        Set the y of the rectangle.
+        This function has setter property.
+
+        Args:
+            value: y of the rectangle.
+        """
+        self.__y = value
