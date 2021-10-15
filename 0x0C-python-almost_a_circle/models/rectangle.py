@@ -26,10 +26,10 @@ class Rectangle(Base):
         """
         Initialization function.
         Private instance attributes:
-        __width: Width of the rectangle.
-        __height: Height of the rectangle.
-        __x: x of the rectangle.
-        __y: y of the rectangle.
+        width: Width of the rectangle.
+        height: Height of the rectangle.
+        x: x of the rectangle.
+        y: y of the rectangle.
         Each with its own public getter and setter.
         Call the super class with id - this super call with use the
         logic of the __init__ of the Base class.
@@ -58,6 +58,10 @@ class Rectangle(Base):
 
         Args:
             value: Width of the rectangle.
+        Width must be an integer, otherwise raise a TypeError
+        exception with the message width must be an integer.
+        If width is under or equals 0, raise a ValueError exception
+        with the message width must be > 0.
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -83,6 +87,10 @@ class Rectangle(Base):
 
         Args:
             value: Height of the rectangle.
+        Height must be an integer, otherwise raise a TypeError
+        exception with the message height must be an integer.
+        If height is under or equals 0, raise a ValueError exception
+        with the message height must be > 0.
         """
         if type(value) is not int:
             raise TypeError("height must be an integer")
@@ -108,6 +116,10 @@ class Rectangle(Base):
 
         Args:
             value: x of the rectangle.
+        x must be an integer, otherwise raise a TypeError
+        exception with the message x must be an integer.
+        If x is under 0, raise a ValueError exception
+        with the message x must be >= 0.
         """
         if type(value) is not int:
             raise TypeError("x must be an integer")
@@ -133,6 +145,10 @@ class Rectangle(Base):
 
         Args:
             value: y of the rectangle.
+        y must be an integer, otherwise raise a TypeError
+        exception with the message y must be an integer.
+        If y is under 0, raise a ValueError exception
+        with the message y must be >= 0.
         """
         if type(value) is not int:
             raise TypeError("y must be an integer")
