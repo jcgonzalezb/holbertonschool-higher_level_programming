@@ -7,7 +7,7 @@ Write a class called Base.
 class Base:
     """
     class Base in which nb_objects is defined
-    as Private instance attribute.
+    as Private class attribute.
     """
     __nb_objects = 0
 
