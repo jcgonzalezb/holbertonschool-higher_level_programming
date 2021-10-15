@@ -21,6 +21,7 @@ class Rectangle(Base):
         y(self)
         y(self, value)
         area(self)
+        display(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -162,3 +163,16 @@ class Rectangle(Base):
         This function returns area of the rectangle.
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+        Function that prints in stdout the rectangle
+        with the character #.
+        Returns:
+            Rectangle with the character #.
+        """
+        if self.__width == 0:
+            print("")
+        elif self.__height == 0:
+            print("")
+        print('\n'.join(['#' * self.__width for rows in range(self.__height)]))
