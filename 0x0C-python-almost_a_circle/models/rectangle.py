@@ -22,6 +22,7 @@ class Rectangle(Base):
         y(self, value)
         area(self)
         display(self)
+        __str__(self):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -176,3 +177,10 @@ class Rectangle(Base):
         elif self.__height == 0:
             print("")
         print('\n'.join(['#' * self.__width for rows in range(self.__height)]))
+
+    def __str__(self):
+        """
+        Function that prints [Rectangle] <width>/<height>
+        """
+        return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.__class__.__name__, self.id, self.__x, 
+                                        self.__y, self.__width, self.__height)
