@@ -30,18 +30,17 @@ class Square(Rectangle):
         """
         Initialization function.
         Private instance attributes:
-        width: Width of the rectangle.
-        height: Height of the rectangle.
-        x: x of the rectangle.
-        y: y of the rectangle.
+        size: size of a side in square.
+        x: x of the square.
+        y: y of the square.
         Each with its own public getter and setter.
         Call the super class with id - this super call with use the
         logic of the __init__ of the Base class.
         """
         super().__init__(id, x, y)
         self.size = size
-        self.height = size
         self.width = size
+        self.height = size
 
     def x(self):
         """
@@ -82,32 +81,34 @@ class Square(Rectangle):
     @property
     def size(self):
         """
-        Width function.
+        Size function.
         This function has getter property.
         Returns:
-            Width of the rectangle.
+            Size of a side in square.
         """
-        return self.__size
+        return self.size
 
     @size.setter
     def size(self, value):
         """
-        Set the width function.
+        Set the size function.
         This function has setter property.
 
         Args:
-            value: Width of the rectangle.
-        Width must be an integer, otherwise raise a TypeError
-        exception with the message width must be an integer.
-        If width is under or equals 0, raise a ValueError exception
-        with the message width must be > 0.
+            value: size of a side in square.
+        The setter should assign (in this order) the width and the
+        height - with the same value.
+        The setter should have the same value validation as the 
+        Rectangle for width and height - No need to change the
+        exception error message (It should be the one from width).
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.__size = value
-    
+        self.__width = value
+        self.__height = value
+
     def __str__(self):
         """
         Function that prints [Square] (<id>) <x>/<y> - <size>
