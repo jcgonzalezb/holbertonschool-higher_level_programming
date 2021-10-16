@@ -22,7 +22,8 @@ class Rectangle(Base):
         y(self, value)
         area(self)
         display(self)
-        __str__(self):
+        __str__(self)
+        def update(self, *args)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -173,10 +174,11 @@ class Rectangle(Base):
             Rectangle with the character #.
         """
         if self.__width == 0:
-            print("")
+            print('')
         elif self.__height == 0:
-            print("")
-        print('\n'.join(['#' * self.__width for rows in range(self.__height)]))
+            print('')
+        else:
+            print('\n'.join(['#' * self.__width for rows in range(self.__height)]))
 
     def __str__(self):
         """
@@ -184,3 +186,37 @@ class Rectangle(Base):
         """
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.__class__.__name__, self.id, self.__x, 
                                         self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """
+        This function assigns an argument to each attribute.
+
+        Args:
+            1st argument should be the id attribute.
+            2nd argument should be the width attribute.
+            3rd argument should be the height attribute.
+            4th argument should be the x attribute.
+            5th argument should be the y attribute.
+        """
+        
+        if len(args) == 1:
+            self.id = args[0]
+        elif len(args) == 2:
+            self.id = args[0]
+            self.width = args[1]
+        elif len(args) == 3:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+        elif len(args) == 4:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+        elif len(args) == 5:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+
