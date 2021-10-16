@@ -3,7 +3,7 @@
 Write the class Square that inherits from Rectangle.
 """
 
-from models.square import Square
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
@@ -26,7 +26,7 @@ class Square(Rectangle):
         def update(self, *args)
     """
 
-    def __init__(self, width, height, x=0, y=0, id=None):
+    def __init__(self, size, x=0, y=0, id=None):
         """
         Initialization function.
         Private instance attributes:
@@ -39,10 +39,11 @@ class Square(Rectangle):
         logic of the __init__ of the Base class.
         """
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        super().__init__(x)
+        super().__init__(y)
+        super().__init__(width)
+        super().__init__(height)
+        self.size = size
 
     @property
     def width(self):
@@ -182,10 +183,10 @@ class Square(Rectangle):
 
     def __str__(self):
         """
-        Function that prints [Rectangle] <width>/<height>
+        Function that prints [Square] (<id>) <x>/<y> - <size>
         """
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.__class__.__name__, self.id, self.__x, 
-                                        self.__y, self.__width, self.__height)
+                                        self.__y, self.__size)
 
     def update(self, *args, **kwargs):
         """
