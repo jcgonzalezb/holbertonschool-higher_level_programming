@@ -178,21 +178,23 @@ class Rectangle(Base):
         elif self.__height == 0:
             print('')
         else:
-            print('\n'.join(['#' * self.__width for rows in range(self.__height)]))
+            print('\n'.join(['#' * self.__width for rows
+                            in range(self.__height)]))
 
     def __str__(self):
         """
         Function that prints [Rectangle] <width>/<height>
         """
-        return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(self.__class__.__name__, self.id, self.__x, 
-                                        self.__y, self.__width, self.__height)
+        return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.__x, self.__y,
+               self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """
         This function assigns an argument to each attribute and
         assigns a key/value argument to attributes.
 
-        **kwargs can be thought of as a double pointer to a 
+        **kwargs can be thought of as a double pointer to a
         dictionary: key/value.
         Each key in this dictionary represents an attribute to
         the instance.
