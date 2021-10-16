@@ -164,7 +164,7 @@ class Rectangle(Base):
         """
         This function returns area of the rectangle.
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """
@@ -173,21 +173,21 @@ class Rectangle(Base):
         Returns:
             Rectangle with the character #.
         """
-        if self.__width == 0:
+        if self.width == 0:
             print('')
-        elif self.__height == 0:
+        elif self.height == 0:
             print('')
         else:
-            print('\n'.join(['#' * self.__width for rows
-                            in range(self.__height)]))
+            print('\n'.join(['#' * self.width for rows
+                            in range(self.height)]))
 
     def __str__(self):
         """
         Function that prints [Rectangle] <width>/<height>
         """
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
-            self.__class__.__name__, self.id, self.__x, self.__y,
-               self.__width, self.__height)
+            self.__class__.__name__, self.id, self.x, self.y,
+               self.width, self.height)
 
     def update(self, *args, **kwargs):
         """
