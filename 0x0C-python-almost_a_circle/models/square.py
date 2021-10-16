@@ -38,9 +38,24 @@ class Square(Rectangle):
         Call the super class with id - this super call with use the
         logic of the __init__ of the Base class.
         """
-        self.__height = size
-        self.__width = size
         super().__init__(id, x, y)
-        super().__init__(height, width)
+        self.height = size
+        self.width = size
+
+    def height(self):
+        """
+        Height function.
+        This function has getter property.
+        Returns:
+            Height of the rectangle.
+        """
         super().height()
-        super().width()
+
+    def width(self):
+        """
+        Width function.
+        This function has getter property.
+        Returns:
+            Width of the rectangle.
+        """
+        return super().width
