@@ -189,7 +189,14 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        This function assigns an argument to each attribute.
+        This function assigns an argument to each attribute and
+        assigns a key/value argument to attributes.
+
+        **kwargs can be thought of as a double pointer to a 
+        dictionary: key/value.
+        Each key in this dictionary represents an attribute to
+        the instance.
+        **kwargs must be skipped if *args exists and is not empty.
 
         Args:
             1st argument should be the id attribute.
