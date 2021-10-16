@@ -198,7 +198,6 @@ class Rectangle(Base):
             4th argument should be the x attribute.
             5th argument should be the y attribute.
         """
-        
         if len(args) == 1:
             self.id = args[0]
         elif len(args) == 2:
@@ -219,3 +218,14 @@ class Rectangle(Base):
             self.height = args[2]
             self.x = args[3]
             self.y = args[4]
+
+        if "id" in kwargs:
+            self.id = kwargs.get("id")
+        if "width" in kwargs:
+            self.width = kwargs.get("width")
+        if "height" in kwargs:
+            self.height = kwargs.get("height")
+        if "x" in kwargs:
+            self.x = kwargs.get("x")
+        if "y" in kwargs:
+            self.y = kwargs.get("y")
