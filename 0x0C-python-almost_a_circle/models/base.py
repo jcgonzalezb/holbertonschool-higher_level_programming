@@ -4,12 +4,16 @@ Write a class called Base.
 """
 
 
+import json
+
+
 class Base:
     """
     class Base in which nb_objects is defined
     as Private class attribute.
     Methods:
         def to_json_string(list_dictionaries)
+        def save_to_file(cls, list_objs)
     """
     __nb_objects = 0
 
@@ -29,6 +33,7 @@ class Base:
         else:
             self.id = id
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """
         Returns the JSON string representation of list_dictionaries.
@@ -41,4 +46,24 @@ class Base:
         if list_dictionaries is None or list_dictionaries == 0:
             return "[]"
         else:
-            return list_dictionaries
+            return json.dumps(list_dictionaries, sort_keys=True)
+    
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        Writes the JSON string representation of list_objs to a file.
+
+        If list_dictionaries is None or empty, return the string: "[]".
+        Otherwise, return the JSON string representation of list_dictionaries.
+        The filename must be: <Class name>.json - example: Rectangle.json.
+        Must use the static method to_json_string (created before).
+        Must overwrite the file if it already exists
+        Attributes:
+            list_objs: A list of instances who inherits of Base - example:
+            list of Rectangle or list of Square instances.
+        """
+        if list_objs is None:
+            return "[]"
+        else:
+            with open("Rectangle.json", "w") as outfile:
+                json.dump(list(list_objs), outfile)
