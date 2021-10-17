@@ -24,6 +24,7 @@ class Rectangle(Base):
         display(self)
         __str__(self)
         def update(self, *args)
+        def to_dictionary(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -238,3 +239,11 @@ class Rectangle(Base):
             self.x = kwargs.get("x")
         if "y" in kwargs:
             self.y = kwargs.get("y")
+
+    def to_dictionary(self):
+        """
+        This function returns the dictionary representation
+        of a Rectangle.
+        This dictionary must contain: id, width, height, x, y.
+        """
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height, 'width': self.width}
