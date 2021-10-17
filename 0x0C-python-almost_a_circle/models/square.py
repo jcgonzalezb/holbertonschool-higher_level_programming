@@ -74,3 +74,43 @@ class Square(Rectangle):
         return "[{:s}] ({:d}) {:d}/{:d} - {:d}".format(
             self.__class__.__name__, self.id, self.x, self.y,
                self.size)
+
+    def update(self, *args, **kwargs):
+        """
+        This function assigns an argument to each attribute and
+        assigns a key/value argument to attributes.
+        **kwargs can be thought of as a double pointer to a
+        dictionary: key/value (keyworded arguments).
+        Each key in this dictionary represents an attribute to
+        the instance.
+        **kwargs must be skipped if *args exists and is not empty.
+        Each key in this dictionary represents an attribute to the instance.
+        *args is the list of arguments - no-keyworded arguments
+            1st argument should be the id attribute
+            2nd argument should be the size attribute
+            3rd argument should be the x attribute
+            4th argument should be the y attribute
+        """
+        if len(args) == 1:
+            self.id = args[0]
+        elif len(args) == 2:
+            self.id = args[0]
+            self.size = args[1]
+        elif len(args) == 3:
+            self.id = args[0]
+            self.size = args[1]
+            self.x = args[2]
+        elif len(args) == 4:
+            self.id = args[0]
+            self.size = args[1]
+            self.x = args[2]
+            self.y = args[3]
+
+        if "id" in kwargs:
+            self.id = kwargs.get("id")
+        if "size" in kwargs:
+            self.width = kwargs.get("size")
+        if "x" in kwargs:
+            self.x = kwargs.get("x")
+        if "y" in kwargs:
+            self.y = kwargs.get("y")
