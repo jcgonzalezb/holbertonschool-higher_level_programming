@@ -37,46 +37,8 @@ class Square(Rectangle):
         Call the super class with id - this super call with use the
         logic of the __init__ of the Base class.
         """
-        super().__init__(id, x, y)
+        super().__init__(size, size, x, y, id)
         self.size = size
-        self.width = size
-        self.height = size
-
-    def x(self):
-        """
-        x function.
-        This function has getter property.
-        Returns:
-            x of the rectangle.
-        """
-        return super().x()
-
-    def y(self):
-        """
-        y function.
-        This function has getter property.
-        Returns:
-            y of the rectangle.
-        """
-        return super().y()
-
-    def height(self):
-        """
-        Height function.
-        This function has getter property.
-        Returns:
-            Height of the rectangle.
-        """
-        super().height()
-
-    def width(self):
-        """
-        Width function.
-        This function has getter property.
-        Returns:
-            Width of the rectangle.
-        """
-        return super().width
 
     @property
     def size(self):
@@ -86,7 +48,7 @@ class Square(Rectangle):
         Returns:
             Size of a side in square.
         """
-        return self.size
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -98,16 +60,12 @@ class Square(Rectangle):
             value: size of a side in square.
         The setter should assign (in this order) the width and the
         height - with the same value.
-        The setter should have the same value validation as the 
+        The setter should have the same value validation as the
         Rectangle for width and height - No need to change the
         exception error message (It should be the one from width).
         """
-        if type(value) is not int:
-            raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
-        self.__width = value
-        self.__height = value
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """
