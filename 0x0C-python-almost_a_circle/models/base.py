@@ -5,6 +5,7 @@ Write a class called Base.
 
 
 import json
+from pathlib import Path
 
 
 class Base:
@@ -16,6 +17,7 @@ class Base:
         def save_to_file(cls, list_objs)
         def from_json_string(json_string):
         def create(cls, **dictionary):
+        def load_from_file(cls):
     """
     __nb_objects = 0
 
@@ -80,7 +82,6 @@ class Base:
         Returns the list of the JSON string representation json_string.
         If json_string is None or empty, return an empty list.
         Otherwise, return the list represented by json_string.
-
         Attributes:
             json_string: String representing a list of dictionaries.
         """
@@ -110,3 +111,25 @@ class Base:
             dummy = cls(1, 1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances.
+        The filename must be: <Class name>.json - example: Rectangle.json.
+        If the file doesn’t exist, return an empty list.Otherwise, return
+        a list of instances - the type of these instances depends on cls
+        (current class using this method).
+        You must use the from_json_string and create methods
+        """
+        path = '/holbertonschool-higher_level_programming/0x0C-python-almost_a_circle/'
+        filename = cls.__name__ + ".json"
+        filename = Path(path)
+
+        if filename.exists() == 0:
+            return []
+        else:
+            with open(filename, 'r', encoding='utf8') as f:
+                for line in f:
+                    cls.from_json_string()
+                    create(cls, **dictionary)
