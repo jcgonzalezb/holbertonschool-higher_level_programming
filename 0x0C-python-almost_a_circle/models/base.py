@@ -83,7 +83,7 @@ class Base:
             json_string: String representing a list of dictionaries.
         """
         if json_string is None or len(json_string) == 0:
-            json_string == "[]"
+            json_string = "[]"
         else:
             return json.loads(json_string)
 
