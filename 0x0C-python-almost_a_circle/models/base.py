@@ -14,6 +14,7 @@ class Base:
     Methods:
         def to_json_string(list_dictionaries)
         def save_to_file(cls, list_objs)
+        def from_json_string(json_string):
     """
     __nb_objects = 0
 
@@ -62,12 +63,27 @@ class Base:
             list of Rectangle or list of Square instances.
         """
         objects = []
-        if list_objs is None:
+        if list_objs is None or len(list_objs) == 0:
             return list_objs == []
         else:
             for i in list_objs:
                 objects.append(cls.to_dictionary(i))
-            
+
         filename = cls.__name__ + ".json"
         with open(filename, "w") as outfile:
             outfile.write(cls.to_json_string(objects))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Returns the list of the JSON string representation json_string.
+        If json_string is None or empty, return an empty list.
+        Otherwise, return the list represented by json_string.
+
+        Attributes:
+            json_string: String representing a list of dictionaries.
+        """
+        if json_string is None or len(json_string) == 0:
+            json_string == []
+        else:
+            return json.loads(json_string)
