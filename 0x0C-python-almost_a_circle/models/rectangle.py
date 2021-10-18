@@ -179,7 +179,7 @@ class Rectangle(Base):
         elif self.height == 0:
             print('')
         else:
-            print('\n'.join(['#' * self.width for rows
+            print('\n' * self.__y +'\n'.join([' ' * self.__x + '#' * self.width for rows
                             in range(self.height)]))
 
     def __str__(self):
