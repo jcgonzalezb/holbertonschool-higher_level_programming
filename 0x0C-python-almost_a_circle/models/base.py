@@ -122,14 +122,13 @@ class Base:
         (current class using this method).
         You must use the from_json_string and create methods
         """
-        path = '/holbertonschool-higher_level_programming/0x0C-python-almost_a_circle/'
-        filename = cls.__name__ + ".json"
-        filename = Path(path)
-
-        if filename.exists() == 0:
-            return []
-        else:
-            with open(filename, 'r', encoding='utf8') as f:
-                for line in f:
-                    cls.from_json_string()
-                    create(cls, **dictionary)
+        filename_2 = cls.__name__ + ".json"
+        empty_list = []
+        try:
+            with open(filename_2, 'r') as f:
+                instances = cls.from_json_string(f.read())
+            for i, dic in enumarate(instances):
+                l.append(cls.create(**instances[i]))
+        except:
+            pass
+        return empty_list
