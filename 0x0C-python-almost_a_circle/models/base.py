@@ -65,9 +65,7 @@ class Base:
             list of Rectangle or list of Square instances.
         """
         objects = []
-        if list_objs is None:
-            return list_objs == []
-        else:
+        if list_objs is not None:
             for i in list_objs:
                 objects.append(cls.to_dictionary(i))
 
