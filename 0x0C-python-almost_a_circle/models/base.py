@@ -5,8 +5,6 @@ Write a class called Base.
 
 
 import json
-from pathlib import Path
-
 
 class Base:
     """
