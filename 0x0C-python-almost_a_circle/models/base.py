@@ -15,6 +15,7 @@ class Base:
         def to_json_string(list_dictionaries)
         def save_to_file(cls, list_objs)
         def from_json_string(json_string):
+        def create(cls, **dictionary):
     """
     __nb_objects = 0
 
@@ -87,3 +88,25 @@ class Base:
             json_string == []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Returns an instance with all attributes already set.
+        You must use the method def update(self, *args, **kwargs).
+        To use the update method to assign all attributes, you must create
+        a “dummy” instance before:
+        Create a Rectangle or Square instance with “dummy” mandatory attributes
+        (width, height, size, etc.).
+        Call update instance method to this “dummy” instance to apply your real
+        values.
+        **dictionary must be used as **kwargs of the method update.
+        Attributes:
+            **dictionary: A double pointer to a dictionary
+        """
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        return dummy
