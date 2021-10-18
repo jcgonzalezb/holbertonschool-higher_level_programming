@@ -124,7 +124,7 @@ class Base:
             with open(filename_2, 'r') as f:
                 instances = cls.from_json_string(f.read())
             for i, dic in enumarate(instances):
-                l.append(cls.create(**instances[i]))
+                empty_list.append(cls.create(**instances[i]))
         except:
             pass
         return empty_list
