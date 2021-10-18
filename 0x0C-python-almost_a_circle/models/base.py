@@ -65,7 +65,7 @@ class Base:
             list of Rectangle or list of Square instances.
         """
         objects = []
-        if list_objs is None or len(list_objs) == 0:
+        if list_objs is None:
             return list_objs == []
         else:
             for i in list_objs:
