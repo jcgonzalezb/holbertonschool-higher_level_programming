@@ -6,6 +6,7 @@ Write a class called Base.
 
 import json
 
+
 class Base:
     """
     class Base in which nb_objects is defined
