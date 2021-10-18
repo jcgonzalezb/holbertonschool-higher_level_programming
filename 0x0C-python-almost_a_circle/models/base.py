@@ -119,12 +119,9 @@ class Base:
         You must use the from_json_string and create methods
         """
         filename_2 = cls.__name__ + ".json"
-        empty_list = []
         try:
             with open(filename_2, 'r') as f:
-                instances = cls.from_json_string(f.read())
-            for i, dic in enumarate(instances):
-                empty_list.append(cls.create(**instances[i]))
-        except:
-            pass
-        return empty_list
+                return [cls.create(**obj)
+                        for obj in cls.from_json_string(f.read())]
+        except FileNotFoundError:
+            return []
