@@ -66,9 +66,12 @@ class TestSquare(unittest.TestCase):
             Square(1, {10, 3}, -99, 1)
             Square(1, "2")
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
-            Square(1, -1)        
+            Square(1, -2)        
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(1, 1, "99")
+            Square(1, 1, [10, 3])
+        with self.assertRaisesRegex(TypeError, "y must be >= 0"):
+            Square(1, 1, -3)
 
     def test_invalid_args(self):
         """Test too many args given throws error"""
