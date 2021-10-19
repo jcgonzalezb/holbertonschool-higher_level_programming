@@ -90,7 +90,7 @@ class TestBase(unittest.TestCase):
 
     def test_from_empty_json_string(self):
         """Test no JSON string translates into empty Python dict"""
-        s3 = ""
+        s3 = []
         strs3 = Base.from_json_string(s3)
         self.assertTrue(type(strs3) == list)
         self.assertTrue(strs3 == [])
