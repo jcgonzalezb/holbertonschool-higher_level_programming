@@ -12,11 +12,11 @@ class Base:
     class Base in which nb_objects is defined
     as Private class attribute.
     Methods:
-        def to_json_string(list_dictionaries)
-        def save_to_file(cls, list_objs)
-        def from_json_string(json_string):
-        def create(cls, **dictionary):
-        def load_from_file(cls):
+        to_json_string(list_dictionaries)
+        save_to_file(cls, list_objs)
+        from_json_string(json_string):
+        create(cls, **dictionary):
+        load_from_file(cls):
     """
     __nb_objects = 0
 
