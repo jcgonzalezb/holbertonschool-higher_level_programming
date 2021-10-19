@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Unittest for base.py
 
--> Tested using python3 -m unittest tests/test_base
 """
 import unittest
 import json

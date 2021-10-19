@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Unittest for rectangle.py
 
--> Tested using python3 -m unittest tests/test_rectangle.py
+-> Tested using python3 -m unittest tests/test_models/test_rectangle.py
 """
 import unittest
 import json
