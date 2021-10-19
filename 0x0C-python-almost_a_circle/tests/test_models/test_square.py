@@ -7,6 +7,7 @@ import unittest
 import json
 from contextlib import redirect_stdout
 from io import StringIO
+from os import chdir, getcwd, remove
 from models import base
 from models import square
 Square = square.Square
@@ -133,3 +134,24 @@ class TestSquare(unittest.TestCase):
         s2 = Square(10, 10)
         s2.update(**sdic)
         self.assertEqual(str(s2), '[Square] (4) 2/3 - 1')
+
+    def test_save_to_file(self):
+        """Test the save_to_file method
+        """
+        square = Square(1)
+        types = (int, float, str, tuple, list, dict, bool)
+        insts = [square] + [Square(1, id=t()) for t in types]
+        fname = 'Square.json'
+        try:
+            remove(fname)
+        except FileNotFoundError:
+            pass
+        self.assertIsNone(Square.save_to_file(None))
+        with open(fname) as ifile:
+            self.assertEqual(ifile.read(), '[]')
+        for index in range(len(insts)):
+            self.assertIsNone(Square.save_to_file(insts[index:]))
+            with open(fname) as ifile:
+                self.assertEqual(ifile.read(), Square.to_json_string(
+                    [obj.to_dictionary() for obj in insts[index:]]
+                ))
