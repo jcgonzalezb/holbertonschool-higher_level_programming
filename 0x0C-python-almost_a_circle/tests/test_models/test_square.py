@@ -70,7 +70,7 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square(1, 1, "99")
             Square(1, 1, [10, 3])
-        with self.assertRaisesRegex(TypeError, "y must be >= 0"):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(1, 1, -3)
 
     def test_invalid_args(self):
