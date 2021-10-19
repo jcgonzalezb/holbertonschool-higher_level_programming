@@ -7,7 +7,6 @@ from models import base
 from models import rectangle
 Rectangle = rectangle.Rectangle
 Base = base.Base
-Square = square.Square
 
 
 class TestBase(unittest.TestCase):
@@ -42,3 +41,28 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base(50, 50)
 
+    def test_to_json_string(self):
+        """Test dict given translates into JSON string"""
+        d0 = {"id": 1, "width": 2, "height": 3, "x": 4, "y": 5}
+        d1 = {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}
+        strd01 = Base.to_json_string([d0, d1])
+        self.assertTrue(type(d0) == dict)
+        self.assertTrue(type(strd01) == str)
+        self.assertTrue(strd01,
+                        [{"id": 1, "width": 2, "height": 3, "x": 4, "y": 5},
+                         {"id": 6, "width": 7, "height": 8, "x": 9, "y": 10}])
+
+    def test_none_to_json_string(self):
+        """Test no dict given translates into JSON string of empty dict"""
+        d2 = None
+        strd2 = Base.to_json_string([d2])
+        self.assertTrue(type(strd2) == str)
+        self.assertTrue(strd2, "[]")
+
+    def test_empty_to_json_string(self):
+        """Test empty dict given translates into JSON string of empty dict"""
+        d3 = dict()
+        strd3 = Base.to_json_string([d3])
+        self.assertTrue(len(d3) == 0)
+        self.assertTrue(type(strd3) == str)
+        self.assertTrue(strd3, "[]")
