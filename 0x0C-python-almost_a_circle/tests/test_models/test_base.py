@@ -15,13 +15,26 @@ class TestBase(unittest.TestCase):
     base.py file.
     """
     def setUp(self):
-        pass
+        """Create a temporary directory and Base instance
+        """
+        self.base = Base()
+        chdir(mkdtemp())
 
     def tearDown(self):
-        try:
-            os.remove("Rectangle.json")
-        except:
-            pass
+        """Remove temporary files and directories
+        """
+        rmtree(getcwd(), ignore_errors=True)
+
+    def test_base(self):
+        """Test the __init__ method
+        """
+        self.assertIsInstance(self.base, Base)
+
+    def test_base_id(self):
+        """Test the __init__ method
+        """
+        self.assertIsInstance(self.base.id, int)
+        self.assertGreater(self.base.id, 0)
 
     def test_class(self):
         """Test class created is indeed Base"""
