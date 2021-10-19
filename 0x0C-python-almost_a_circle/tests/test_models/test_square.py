@@ -58,12 +58,13 @@ class TestSquare(unittest.TestCase):
             Square(1, -1, 1, 1)
             Square(1, 1, -99, 1)
             Square(-1)
+            Square(0)
             Square(9).size(-9)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, "1", -99, 1)
             Square(1, [10, 3], -99, 1)
             Square(1, {10, 3}, -99, 1)
-            Square(1, "1")
+            Square(1, "2")
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Square(1, -1)        
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
