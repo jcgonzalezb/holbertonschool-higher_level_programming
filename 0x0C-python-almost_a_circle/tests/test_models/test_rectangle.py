@@ -40,15 +40,6 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(r2.y == 0)
         self.assertTrue(r2.id is not None)
 
-    def test_default_attr(self):
-        """Test default attributes are set when not given"""
-        r3 = Rectangle(1, 0)
-        self.assertTrue(r3.width == 1)
-        self.assertTrue(r3.height == 0)
-        self.assertTrue(r3.x == 0)
-        self.assertTrue(r3.y == 0)
-        self.assertTrue(r3.id is not None)
-
     def test_attr_validated(self):
         """Test attributes are validated before set"""
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
@@ -63,6 +54,8 @@ class TestRectangle(unittest.TestCase):
             Rectangle(1, 1, 1, (30, 20), 1)
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Rectangle(0, 1, 1, 1, 1)
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            Rectangle(1, 0, 0, 0, 0)           
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle(1, -20, 1, 1, 1)
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
