@@ -19,6 +19,8 @@ class TestSquare(unittest.TestCase):
     def test_class(self):
         """Test class created is indeed Base"""
         self.assertTrue(Square(4, 5, 6, 1), self.__class__ == Square)
+        s = Square(10)
+        self.assertEqual(type(s), Square)
 
     def test_all_attr_given(self):
         """Test all attributes match what's given"""
