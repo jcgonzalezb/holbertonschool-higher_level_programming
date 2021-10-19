@@ -23,8 +23,8 @@ class Rectangle(Base):
         area(self)
         display(self)
         __str__(self)
-        def update(self, *args)
-        def to_dictionary(self)
+        update(self, *args)
+        to_dictionary(self)
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
