@@ -47,7 +47,6 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square("10")
             Square([10, 3])
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square({20, })
             Square({"d": 20})
             Square(None)
@@ -60,6 +59,10 @@ class TestSquare(unittest.TestCase):
             Square(1, 1, -99, 1)
             Square(-1)
             Square(9).size(-9)
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Square(1, "1", -99, 1)
+            Square(1, [10, 3], -99, 1)
+            Square(1, {10, 3}, -99, 1)
 
     def test_invalid_args(self):
         """Test too many args given throws error"""
