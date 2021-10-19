@@ -14,6 +14,14 @@ class TestBase(unittest.TestCase):
     """This class contains several methods to test the
     base.py file.
     """
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        try:
+            os.remove("Rectangle.json")
+        except:
+            pass
 
     def test_class(self):
         """Test class created is indeed Base"""
