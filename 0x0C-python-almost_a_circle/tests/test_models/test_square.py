@@ -74,6 +74,12 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(1, 1, -3)
 
+    def test_square_width(self):
+        """Test the __init__ method
+        """
+        square = Square(1)
+        self.assertEqual(square.width, 1)
+
     def test_invalid_args(self):
         """Test too many args given throws error"""
         with self.assertRaises(TypeError):
