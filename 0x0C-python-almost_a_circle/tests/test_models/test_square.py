@@ -212,3 +212,24 @@ class TestSquare(unittest.TestCase):
                 self.assertEqual(ifile.read(), Square.to_json_string(
                     [obj.to_dictionary() for obj in insts[index:]]
                 ))
+
+    def test_save_to_file(self):
+        """Test the save_to_file method
+        """
+        square = Square(0)
+        types = (int, float, str, tuple, list, dict, bool)
+        insts = [square] + [Square(1, id=t()) for t in types]
+        fname = 'Square.json'
+        try:
+            remove(fname)
+        except FileNotFoundError:
+            pass
+        self.assertIsNone(Square.save_to_file(None))
+        with open(fname) as ifile:
+            self.assertEqual(ifile.read(), '[]')
+        for index in range(len(insts)):
+            self.assertIsNone(Square.save_to_file(insts[index:]))
+            with open(fname) as ifile:
+                self.assertEqual(ifile.read(), Square.to_json_string(
+                    [obj.to_dictionary() for obj in insts[index:]]
+                ))
