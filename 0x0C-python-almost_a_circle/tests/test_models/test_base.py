@@ -4,14 +4,11 @@
 """
 import unittest
 import json
-from contextlib import redirect_stdout
-from io import StringIO
-from os import chdir, getcwd, remove
-from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
-Rectangle = rectangle.Rectangle
+import os
+from models import base
+from models import rectangle
 Base = base.Base
+Rectangle = rectangle.Rectangle
 
 
 class TestBase(unittest.TestCase):
