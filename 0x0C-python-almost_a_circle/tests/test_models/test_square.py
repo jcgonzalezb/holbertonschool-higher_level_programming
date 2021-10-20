@@ -151,6 +151,47 @@ class TestSquare(unittest.TestCase):
         s2.update(**sdic)
         self.assertEqual(str(s2), '[Square] (4) 2/3 - 1')
 
+    def test_create_type(self):
+        """Test the create method
+        """
+        self.assertIsInstance(Square.create(), Square)
+        self.assertIsInstance(Square.create(id=None), Square)
+        self.assertIsInstance(Square.create(id=0), Square)
+        self.assertIsInstance(Square.create(id=0.0), Square)
+        self.assertIsInstance(Square.create(id="0"), Square)
+        self.assertIsInstance(Square.create(id=(0,)), Square)
+        self.assertIsInstance(Square.create(id=[0]), Square)
+        self.assertIsInstance(Square.create(id={0}), Square)
+        self.assertIsInstance(Square.create(id={0: 0}), Square)
+        self.assertIsInstance(Square.create(id=True), Square)
+        self.assertIsInstance(Square.create(id=type), Square)
+
+    def test_create_id_equality(self):
+        """Test the create method
+        """
+        square = Square(1)
+        self.assertNotEqual(square.id, Square.create().id)
+        self.assertNotEqual(square.id, Square.create(id=None).id)
+        self.assertEqual(Square.create(id=0).id, 0)
+        self.assertEqual(Square.create(id=0.0).id, 0.0)
+        self.assertEqual(Square.create(id="0").id, "0")
+        self.assertEqual(Square.create(id=(0,)).id, (0,))
+        self.assertEqual(Square.create(id=[0]).id, [0])
+        self.assertEqual(Square.create(id={0}).id, {0})
+        self.assertEqual(Square.create(id={0: 0}).id, {0: 0})
+
+    def test_create_id_identity(self):
+        """Test the create method
+        """
+        self.assertIs(Square.create(id=True).id, True)
+        self.assertIs(Square.create(id=type).id, type)
+        self.assertIs(Square.create(id=None).id, None)
+
+    def test_create_id_type(self):
+        """Test the create method
+        """
+        self.assertIsInstance(Square.create().id, int)
+
     def test_save_to_file(self):
         """Test the save_to_file method
         """
