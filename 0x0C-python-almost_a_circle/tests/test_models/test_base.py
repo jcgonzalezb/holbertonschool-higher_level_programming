@@ -24,6 +24,17 @@ class TestBase(unittest.TestCase):
         except:
             pass
 
+    def test_no_arg_assigning_an_ID(self):
+        b1 = Base()
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
+
+    def test_no_arg_assigning_an_ID_plus_1(self):
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
+        self.assertEqual(b1.id, b3.id - 2)
+
     def test_class(self):
         """Test class created is indeed Base"""
         self.assertTrue(Base(100), self.__class__ == Base)
