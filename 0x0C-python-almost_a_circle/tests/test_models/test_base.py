@@ -7,8 +7,10 @@ import json
 import os
 from models import base
 from models import rectangle
+from models import square
 Base = base.Base
 Rectangle = rectangle.Rectangle
+Square = square.Square
 
 
 class TestBase(unittest.TestCase):
@@ -141,10 +143,22 @@ class TestBase(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual('[]', file.read())
 
+    def test_save_none_to_file_s(self):
+        """Test save None to file"""
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual('[]', file.read())
+
     def test_empty_none_to_file(self):
         """Test save empty list to file"""
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
+            self.assertEqual('[]', file.read())
+
+    def test_empty_none_to_file(self):
+        """Test save empty list to file"""
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
             self.assertEqual('[]', file.read())
 
     def test_load_from_file(self):
