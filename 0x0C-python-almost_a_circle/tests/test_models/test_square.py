@@ -90,8 +90,6 @@ class TestSquare(unittest.TestCase):
             0, 0, 0, 12
         )
 
-
-
     def test_invalid_args(self):
         """Test too many args given throws error"""
         with self.assertRaises(TypeError):
