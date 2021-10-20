@@ -80,6 +80,15 @@ class TestSquare(unittest.TestCase):
         square = Square(1)
         self.assertEqual(square.width, 1)
 
+    def test_check_width_ValueError(self):
+        """Test TypeError for width in Square"""
+        self.assertRaisesRegex(
+            ValueError,
+            'width must be > 0',
+            Square,
+            -1, 0, 0, 12
+        )
+
     def test_invalid_args(self):
         """Test too many args given throws error"""
         with self.assertRaises(TypeError):
