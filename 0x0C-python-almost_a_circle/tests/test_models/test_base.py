@@ -24,24 +24,20 @@ class TestBase(unittest.TestCase):
         except:
             pass
 
+    def test_no_arg(self):
+        b1 = Base()
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
+
+    def test_three_bases(self):
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
+        self.assertEqual(b1.id, b3.id - 2)
+
     def test_class(self):
         """Test class created is indeed Base"""
         self.assertTrue(Base(100), self.__class__ == Base)
-
-    def test_init_type(self):
-        """Test the __init__ method
-        """
-        types = (int, float, str, tuple, list, dict, set, bool)
-        self.assertIsInstance(Base(), Base)
-        self.assertIsInstance(Base(0), Base)
-        for value in [t() for t in types] + [None, type]:
-            self.assertIsInstance(Base(id=value), Base)
-
-    def test_init_id_type(self):
-        """Test the __init__ method
-        """
-        self.assertIsInstance(Base().id, int)
-        self.assertIsInstance(Base(id=None).id, int)
 
     def test_id_given(self):
         """Test ids match when given"""
