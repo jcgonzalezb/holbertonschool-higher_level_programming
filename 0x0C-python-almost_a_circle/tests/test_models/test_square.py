@@ -72,14 +72,8 @@ class TestSquare(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square(1, 1, -3)
 
-    def test_square_width(self):
-        """Test the __init__ method
-        """
-        square = Square(1)
-        self.assertEqual(square.width, 1)
-
     def test_check_width_ValueError(self):
-        """Test TypeError for width in Square"""
+        """Test ValueError for width in Square"""
         self.assertRaisesRegex(
             ValueError,
             'width must be > 0',
@@ -88,7 +82,7 @@ class TestSquare(unittest.TestCase):
         )
 
     def test_check_width_ValueError_2(self):
-        """Test TypeError for width in Square"""
+        """Test ValueError for width in Square"""
         self.assertRaisesRegex(
             ValueError,
             'width must be > 0',
