@@ -28,6 +28,21 @@ class TestBase(unittest.TestCase):
         """Test class created is indeed Base"""
         self.assertTrue(Base(100), self.__class__ == Base)
 
+    def test_init_type(self):
+        """Test the __init__ method
+        """
+        types = (int, float, str, tuple, list, dict, set, bool)
+        self.assertIsInstance(Base(), Base)
+        self.assertIsInstance(Base(0), Base)
+        for value in [t() for t in types] + [None, type]:
+            self.assertIsInstance(Base(id=value), Base)
+
+    def test_init_id_type(self):
+        """Test the __init__ method
+        """
+        self.assertIsInstance(Base().id, int)
+        self.assertIsInstance(Base(id=None).id, int)
+
     def test_id_given(self):
         """Test ids match when given"""
         self.assertTrue(Base(77), self.id == 77)
