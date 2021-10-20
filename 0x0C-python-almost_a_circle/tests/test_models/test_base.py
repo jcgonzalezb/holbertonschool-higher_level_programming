@@ -7,9 +7,9 @@ import json
 from contextlib import redirect_stdout
 from io import StringIO
 from os import chdir, getcwd, remove
-from models import base
-from models import rectangle
-from models import square
+from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 Rectangle = rectangle.Rectangle
 Base = base.Base
 
@@ -19,8 +19,7 @@ class TestBase(unittest.TestCase):
     base.py file.
     """
     def setUp(self):
-        """reset the id objects number"""
-        Rectangle.resetNumber()
+        pass
 
     def tearDown(self):
         try:
