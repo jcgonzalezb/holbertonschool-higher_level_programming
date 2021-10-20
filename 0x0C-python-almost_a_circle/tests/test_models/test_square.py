@@ -59,8 +59,6 @@ class TestSquare(unittest.TestCase):
             Square(1, -1, 1, 1)
             Square(1, 1, -99, 1)
             Square(9).size(-9)
-            Square(-1)
-            Square(0)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, "1", -99, 1)
             Square(1, [10, 3], -99, 1)
@@ -88,6 +86,17 @@ class TestSquare(unittest.TestCase):
             Square,
             -1, 0, 0, 12
         )
+
+    def test_check_width_ValueError_2(self):
+        """Test TypeError for width in Square"""
+        self.assertRaisesRegex(
+            ValueError,
+            'width must be > 0',
+            Square,
+            0, 0, 0, 12
+        )
+
+
 
     def test_invalid_args(self):
         """Test too many args given throws error"""
