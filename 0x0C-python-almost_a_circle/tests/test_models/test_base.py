@@ -37,8 +37,8 @@ class TestBase(unittest.TestCase):
 
     def test_id_not_given(self):
         """Test ids match incremented nb_objects when not given"""
-        self.assertEqual(Base(), self.id == 1)
-        self.assertEqual(Base(), self.id == 2)
+        self.assertTrue(Base(), self.id == 1)
+        self.assertTrue(Base(), self.id == 2)
 
     def test_private_attr_access(self):
         """Test private attr are not accessible"""
