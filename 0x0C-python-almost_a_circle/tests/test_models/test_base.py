@@ -181,9 +181,23 @@ class TestBase(unittest.TestCase):
         self.assertEqual(type(recs), list)
         self.assertEqual(len(recs), 0)
 
-    def test_load_from_empty_file(self):
+    def test_load_from_empty_file_2(self):
         """Test load from empty file"""
         Rectangle.save_to_file([])
         recs = Rectangle.load_from_file()
+        self.assertEqual(type(recs), list)
+        self.assertEqual(len(recs), 0)
+
+    def test_load_from_none_file_2(self):
+        """Test load from None file"""
+        Square.save_to_file(None)
+        recs = Square.load_from_file()
+        self.assertEqual(type(recs), list)
+        self.assertEqual(len(recs), 0)
+
+    def test_load_from_empty_file(self):
+        """Test load from empty file"""
+        Square.save_to_file([])
+        recs = Square.load_from_file()
         self.assertEqual(type(recs), list)
         self.assertEqual(len(recs), 0)
