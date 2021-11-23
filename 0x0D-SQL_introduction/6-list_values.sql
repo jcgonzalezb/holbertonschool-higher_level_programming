@@ -2,4 +2,4 @@
 -- the database hbtn_0c_0 in your MySQL server.
 
 USE hbtn_0c_0;
-select *from first_table;
+select * from first_table;
