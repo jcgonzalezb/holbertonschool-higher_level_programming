@@ -1,7 +1,5 @@
--- Creates a table called first_table in the current database.
--- Description: id INT, name VARCHAR(256).
+-- Lists all privileges of the MySQL users user_0d_1
+-- and user_0d_2 on your server.
 
-CREATE TABLE IF NOT EXISTS first_table (
-	id INT,
-	name VARCHAR(256)
-);
+SHOW GRANTS FOR 'user_0d_1'@'localhost';
+SHOW GRANTS FOR 'user_0d_2'@'localhost';
