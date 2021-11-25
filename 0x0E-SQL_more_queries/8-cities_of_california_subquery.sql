@@ -3,6 +3,6 @@
 -- Results must be sorted in ascending order by cities.id
 
 SELECT id, name
-FROM cities
+FROM hbtn_0d_usa.cities
 WHERE state_id = 1
 ORDER BY name ASC;
