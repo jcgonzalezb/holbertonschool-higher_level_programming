@@ -4,9 +4,10 @@
 -- name VARCHAR(256) can’t be null.
 
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
-CREATE TABLE IF NOT EXISTS cities (
-	id INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
-	state_id INT IDENTITY(1,1) NOT NULL,
-	name VARCHAR(256) NOT NULL
-	FOREIGN KEY (id) REFERENCES states (id)
+CREATE TABLE IF NOT EXISTS hbtn_0d_usa.cities (
+	id INT AUTO_INCREMENT UNIQUE NOT NULL,
+	state_id INT NOT NULL,
+	name VARCHAR(256) NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (state_id) REFERENCES hbtn_0d_usa.states (id)
 );
