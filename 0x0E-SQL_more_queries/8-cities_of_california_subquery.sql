@@ -4,4 +4,4 @@
 
 SELECT cities.id, cities.name
 FROM cities, states
-WHERE states.id = cities.state_id = 1;
+WHERE states.id = 1 AND cities.state_id = 1;
