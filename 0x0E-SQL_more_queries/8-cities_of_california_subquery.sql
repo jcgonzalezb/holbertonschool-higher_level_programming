@@ -2,7 +2,6 @@
 -- The states table contains only one record where name = California.
 -- Results must be sorted in ascending order by cities.id
 
-SELECT id, name
-FROM cities
-WHERE state_id = 1
-ORDER BY name ASC;
+SELECT cities.id, cities.name
+FROM cities, states
+WHERE states.id = cities.state_id
