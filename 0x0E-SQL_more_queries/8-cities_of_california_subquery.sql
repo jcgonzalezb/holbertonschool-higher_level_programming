@@ -3,5 +3,5 @@
 -- Results must be sorted in ascending order by cities.id
 
 SELECT cities.id, cities.name
-FROM cities, states
-WHERE states.id = 1 AND cities.state_id = 1;
+  FROM cities, states
+ WHERE states.id = 1 AND cities.state_id = 1;
