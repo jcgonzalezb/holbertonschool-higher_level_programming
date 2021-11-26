@@ -1,8 +1,8 @@
--- Lists all Comedy shows in the database hbtn_0d_tvshows.
--- The tv_genres table contains only one record where
--- name = Comedy (but the id can be different).
--- Each record should display: tv_shows.title.
--- Results must be sorted in ascending order by the show title.
+-- Lists all shows, and all genres linked to that show,
+-- from the database hbtn_0d_tvshows.
+-- If a show doesn’t have a genre, display NULL in the genre column
+-- Each record should display: tv_shows.title - tv_genres.name
+-- Results must be sorted in ascending order by the show title and genre name
 
     SELECT tv_shows.title
       FROM tv_shows
