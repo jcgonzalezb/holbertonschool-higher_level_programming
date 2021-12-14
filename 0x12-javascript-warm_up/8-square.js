@@ -1,5 +1,5 @@
 #!/usr/bin/node
-// Write a script that prints x times “C is fun”.
+// Write a script that prints a square.
 
 let i; let j = 0;
 
