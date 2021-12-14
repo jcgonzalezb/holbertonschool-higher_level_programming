@@ -4,17 +4,17 @@
 const arr = process.argv;
 const n = process.argv.length;
 
-function print2largest (arr, arr_size) {
+function print2largest (arr, n) {
   let i;
   let largest = -2454635434;
   let second = -2454635434;
 
-  if (arr_size < 2) {
+  if (n < 2) {
     console.log('0');
     return;
   }
 
-  for (i = 0; i < arr_size; i++) {
+  for (i = 0; i < n; i++) {
     if (arr[i] > largest) {
       second = largest;
       largest = arr[i];
