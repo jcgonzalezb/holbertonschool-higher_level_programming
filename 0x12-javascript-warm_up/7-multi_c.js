@@ -3,7 +3,7 @@
 
 const message = 'C is fun';
 
-if (process.argv[2] === undefined || process.argv[2] < 0) {
+if (process.argv[2] === undefined) {
   console.log('Missing number of occurrences');
 } else if (parseInt(process.argv[2])) {
   let index = 0;
@@ -11,6 +11,4 @@ if (process.argv[2] === undefined || process.argv[2] < 0) {
     console.log(message);
     index++;
   }
-} else {
-  console.log('Missing number of occurrences');
 }
