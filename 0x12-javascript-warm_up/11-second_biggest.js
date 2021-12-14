@@ -3,20 +3,27 @@
 
 function print2largest (arr, arr_size) {
   let i;
+  largest = second = -2454635434;
 
   if (arr_size < 2) {
     console.log('0');
     return;
   }
-  arr.sort();
 
-  for (i = arr_size - 2; i >= 0; i--) {
-    if (arr[i] !== arr[arr_size - 1]) {
-      console.log(arr[i]);
-      return;
+  for (i = 0; i < arr_size; i++) {
+    if (arr[i] > largest) {
+      second = largest;
+      largest = arr[i];
+    } else if (arr[i] !== largest && arr[i] > second) {
+      second = arr[i];
     }
   }
-  console.log('0');
+
+  if (second === -2454635434) {
+    console.log('0');
+  } else {
+    console.log(second);
+  }
 }
 
 const arr = process.argv;
