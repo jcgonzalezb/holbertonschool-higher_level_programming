@@ -1,9 +1,13 @@
 #!/usr/bin/node
 // Write a script that searches the second biggest integer in the list of arguments.
 
+const arr = process.argv;
+const n = process.argv.length;
+
 function print2largest (arr, arr_size) {
   let i;
-  largest = second = -2454635434;
+  let largest = -2454635434;
+  let second = -2454635434;
 
   if (arr_size < 2) {
     console.log('0');
@@ -26,6 +30,4 @@ function print2largest (arr, arr_size) {
   }
 }
 
-const arr = process.argv;
-const n = process.argv.length;
 print2largest(arr, n);
