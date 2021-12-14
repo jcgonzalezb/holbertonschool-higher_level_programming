@@ -10,7 +10,7 @@ function print2largest (arr, n) {
   let second = -2454635434;
 
   if (n < 2) {
-    console.log('0');
+    console.log(0);
     return;
   }
 
@@ -24,7 +24,7 @@ function print2largest (arr, n) {
   }
 
   if (second === -2454635434) {
-    console.log('0');
+    console.log(0);
   } else {
     console.log(second);
   }
