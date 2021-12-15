@@ -10,9 +10,9 @@ module.exports = class Square extends OriginalSquare {
     } else {
       let i = 0;
       let j = 0;
-      for (i = 0; i < this.height; i++) {
+      for (i = 0; i < this.width; i++) {
         let temp = '';
-        for (j = 0; j < this.width; j++) {
+        for (j = 0; j < this.height; j++) {
           temp = temp + '' + 'C';
         }
         console.log(temp);
