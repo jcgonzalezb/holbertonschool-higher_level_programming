@@ -8,14 +8,8 @@ module.exports = class Square extends OriginalSquare {
     if (c === undefined) {
       this.print();
     } else {
-      let i = 0;
-      let j = 0;
-      for (i = 0; i < this.width; i++) {
-        let temp = '';
-        for (j = 0; j < this.height; j++) {
-          temp = temp + '' + 'C';
-        }
-        console.log(temp);
+      for (let col = 0; col < this.width; col += 1) {
+        console.log(c.repeat(this.height));
       }
     }
   }
