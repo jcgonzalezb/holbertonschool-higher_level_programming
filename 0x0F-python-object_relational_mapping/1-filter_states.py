@@ -20,7 +20,8 @@ if __name__ == "__main__":
 
     mycursor = db.cursor()
 
-    mycursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC;")
+    mycursor.execute("SELECT * FROM states WHERE \
+                    name LIKE 'N%' ORDER BY id ASC;")
 
     myresult = mycursor.fetchall()
 
