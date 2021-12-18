@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-Write a script that takes in an argument and displays all
-values in the states table of the database where name matches the argument.
-Write one that is safe from MySQL injections.
+Write a script that takes in the name of a state as
+an argument and lists all cities of that state,
+using the database.
 """
 
 
@@ -21,15 +21,21 @@ if __name__ == "__main__":
 
     mycursor = db.cursor()
 
-    mycursor.execute("SELECT cities.id, cities.name, states.name \
-                    FROM cities, states \
-                    WHERE states.id = cities.state_id \
-                    ORDER BY cities.id ASC;")
+    myquery = """SELECT cities.name \
+            FROM cities, states \
+			WHERE states.id = cities.state_id \
+			AND states.name = %s ORDER BY cities.id ASC"""
+
+    mycursor.execute(myquery, (argv[4],))
 
     myresult = mycursor.fetchall()
 
-    for x in myresult:
-        print(x)
+    print(myresult)
+
+    for values in myresult:
+        for i in values:
+            print(i, end=' ')
+            print("\n")
 
     mycursor.close()
     db.close()
