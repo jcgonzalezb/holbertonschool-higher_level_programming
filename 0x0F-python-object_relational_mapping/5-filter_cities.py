@@ -30,12 +30,11 @@ if __name__ == "__main__":
 
     myresult = mycursor.fetchall()
 
-    print(myresult)
-
+    string = []
     for values in myresult:
         for i in values:
-            print(i, end=' ')
-            print("\n")
-
+            string.append(i)
+    
+    print(*string, sep=', ')
     mycursor.close()
     db.close()
