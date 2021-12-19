@@ -15,12 +15,12 @@ if __name__ == "__main__":
 
     engine = db.create_engine(
         db.engine.url.URL.create(
-			drivername='mysql',
+            drivername='mysql',
             username=argv[1],
             password=argv[2],
-			host='localhost',
+            host='localhost',
             port=3306,
-			database=argv[3]))
+            database=argv[3]))
 
     meta_data = db.MetaData(bind=engine)
     db.MetaData.reflect(meta_data)
@@ -32,4 +32,4 @@ if __name__ == "__main__":
     myresult = engine.execute(myquery).fetchall()
 
     for i, j in myresult:
-            print("{}: {}". format(i, j))
+        print("{}: {}". format(i, j))
