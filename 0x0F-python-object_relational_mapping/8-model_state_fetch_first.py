@@ -27,9 +27,17 @@ if __name__ == "__main__":
 
     STATES = meta_data.tables['states']
 
-    myquery = db.select([STATES]).where(STATES.c.id == 1)
+    myresult0 = engine.execute('SELECT True FROM states LIMIT 1').fetchall()
 
-    myresult = engine.execute(myquery).fetchall()
-
-    for i, j in myresult:
-        print("{}: {}". format(i, j))
+    string = []
+    for values in myresult0:
+        for i in values:
+            string.append(i)
+    
+    if string[0] == 1:
+        myquery = db.select([STATES]).where(STATES.c.id == 1)
+        myresult = engine.execute(myquery).fetchall()
+        for i, j in myresult:
+            print("{}: {}". format(i, j))
+    else:
+        print("Nothing")
