@@ -4,40 +4,28 @@ Write a script that prints the first State object from the database.
 """
 
 
-import sqlalchemy as db
-from sqlalchemy.engine.url import URL
 from sys import argv
-from sqlalchemy import create_engine, asc
+from sqlalchemy import create_engine
 from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
 
-    engine = db.create_engine(
-        db.engine.url.URL.create(
-            drivername='mysql',
-            username=argv[1],
-            password=argv[2],
-            host='localhost',
-            port=3306,
-            database=argv[3]))
+    username = argv[1]
+    passwrd = argv[2]
+    database = argv[3]
 
-    meta_data = db.MetaData(bind=engine)
-    db.MetaData.reflect(meta_data)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        username, passwrd, database), pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    STATES = meta_data.tables['states']
+    first_object = session.query(State).order_by(State.id).first()
 
-    myresult0 = engine.execute('SELECT True FROM states LIMIT 1').fetchall()
-
-    string = []
-    for values in myresult0:
-        for i in values:
-            string.append(i)
-    
-    if string[0] == 1:
-        myquery = db.select([STATES]).where(STATES.c.id == 1)
-        myresult = engine.execute(myquery).fetchall()
-        for i, j in myresult:
-            print("{}: {}". format(i, j))
+    if first_object:
+        print('{:d}: {:s}'.format(first_object.id, first_object.name))
     else:
         print("Nothing")
+
+    session.close()
