@@ -26,6 +26,6 @@ if __name__ == "__main__":
         State.name.like('%a%')).order_by(State.id)
 
     for _row in myresult.all():
-        print(_row.id, _row.name)
+        print('{:d}: {:s}'.format(_row.id, _row.name))
 
     session.close()
