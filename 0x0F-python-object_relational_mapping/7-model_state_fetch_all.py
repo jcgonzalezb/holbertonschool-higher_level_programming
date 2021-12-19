@@ -1,40 +1,35 @@
 #!/usr/bin/python3
 """
-Write a script that takes in the name of a state as
-an argument and lists all cities of that state,
-using the database.
+Write a script that lists all State objects from the database.
 """
 
 
-import MySQLdb
+import sqlalchemy as db
+from sqlalchemy.engine.url import URL
 from sys import argv
+from sqlalchemy import create_engine, asc
+from model_state import Base, State
+
 
 if __name__ == "__main__":
 
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=argv[1],
-        password=argv[2],
-        database=argv[3],
-    )
+    engine = db.create_engine(
+        db.engine.url.URL.create(
+			drivername='mysql',
+            username=argv[1],
+            password=argv[2],
+			host='localhost',
+            port=3306,
+			database=argv[3]))
 
-    mycursor = db.cursor()
+    meta_data = db.MetaData(bind=engine)
+    db.MetaData.reflect(meta_data)
 
-    myquery = """SELECT cities.name \
-            FROM cities, states \
-			WHERE states.id = cities.state_id \
-			AND states.name = %s ORDER BY cities.id ASC"""
+    STATES = meta_data.tables['states']
 
-    mycursor.execute(myquery, (argv[4],))
+    myquery = db.select([STATES]).order_by(asc(STATES.c.id))
 
-    myresult = mycursor.fetchall()
+    myresult = engine.execute(myquery).fetchall()
 
-    string = []
-    for values in myresult:
-        for i in values:
-            string.append(i)
-
-    print(*string, sep=', ')
-    mycursor.close()
-    db.close()
+    for x in myresult:
+        print(x)
