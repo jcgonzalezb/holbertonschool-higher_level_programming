@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     STATES = meta_data.tables['states']
 
-    myquery = db.select([STATES]).order_by(STATES.c == '1')
+    myquery = db.select([STATES]).where(STATES.c.id == 1)
 
     myresult = engine.execute(myquery).fetchall()
 
