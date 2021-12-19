@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Write a script that prints the State object with the
-name passed as argument from the database.
+Write a script that adds the State object “Louisiana” to the database
 """
 
 
