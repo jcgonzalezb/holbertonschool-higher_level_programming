@@ -1,40 +1,21 @@
 #!/usr/bin/python3
 """
-Write a script that takes in the name of a state as
-an argument and lists all cities of that state,
-using the database.
+Write a python file that contains the class definition of a
+State and an instance Base = declarative_base().
 """
 
 
-import MySQLdb
-from sys import argv
+from sqlalchemy import create_engine
+from sqlalchemy.orm import declarative_base
+from sqlalchemy import Column, Integer, String
 
-if __name__ == "__main__":
+engine = create_engine("mysql://newuser:pass@localhost:3306/db")
 
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=argv[1],
-        password=argv[2],
-        database=argv[3],
-    )
+Base = declarative_base()
 
-    mycursor = db.cursor()
 
-    myquery = """SELECT cities.name \
-            FROM cities, states \
-			WHERE states.id = cities.state_id \
-			AND states.name = %s ORDER BY cities.id ASC"""
+class State (Base):
+    __tablename__ = "states"
 
-    mycursor.execute(myquery, (argv[4],))
-
-    myresult = mycursor.fetchall()
-
-    string = []
-    for values in myresult:
-        for i in values:
-            string.append(i)
-
-    print(*string, sep=', ')
-    mycursor.close()
-    db.close()
+    id = Column(Integer, nullable=False, primary_key=True)
+    name = Column(String(128), nullable=False)
