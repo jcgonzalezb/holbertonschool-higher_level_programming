@@ -23,9 +23,9 @@ if __name__ == "__main__":
     session = Session()
 
     myresult = session.query(State).filter(
-        State.name.like('%a%')).order_by(State.id)
+        State.name.like(argv[4]))
 
     for _row in myresult.all():
-        print('{:d}: {:s}'.format(_row.id, _row.name))
+        print('{:d}'.format(_row.id))
 
     session.close()
