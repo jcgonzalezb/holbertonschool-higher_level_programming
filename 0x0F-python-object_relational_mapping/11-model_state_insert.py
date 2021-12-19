@@ -22,6 +22,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
+    new = State(name = "Louisiana")
+    session.add(new)
+    session.commit()
+
     myresult = session.query(State).order_by(desc(State.id)).first()
 
     print('{:d}'.format(myresult.id))
