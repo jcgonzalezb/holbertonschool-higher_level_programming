@@ -25,7 +25,10 @@ if __name__ == "__main__":
     myresult = session.query(State).filter(
         State.name.like(argv[4]))
 
-    for _row in myresult.all():
-        print('{:d}'.format(_row.id))
+    if myresult.all():
+        for _row in myresult.all():
+            print('{:d}'.format(_row.id))
+    else:
+        print("Not found")
 
     session.close()
