@@ -31,5 +31,5 @@ if __name__ == "__main__":
 
     myresult = engine.execute(myquery).fetchall()
 
-    for x in myresult:
-        print(x)
+    for i, j in myresult:
+            print("{}: {}". format(i, j))
