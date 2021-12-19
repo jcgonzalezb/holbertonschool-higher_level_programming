@@ -1,20 +1,19 @@
 #!/usr/bin/python3
 """
-Write a python file that contains the class definition of a
-State and an instance Base = declarative_base().
+Definition of class State.
 """
 
-
-from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, Integer, String
-
-engine = create_engine("mysql://newuser:pass@localhost:3306/db")
 
 Base = declarative_base()
 
 
-class State (Base):
+class State(Base):
+    """
+    Class State. inherits from Base; instance of base
+    Creates a table "states" and it is linked to MySQL.
+    """
     __tablename__ = "states"
 
     id = Column(Integer, nullable=False, primary_key=True)
