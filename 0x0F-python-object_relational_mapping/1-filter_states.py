@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Write a script that lists all values inside table states from the database.
-Should take 3 arguments: mysql username, mysql password and database name.
+Write a script that lists all states with a name starting with N
+(upper N) from the database
 """
 
 
@@ -26,7 +26,8 @@ if __name__ == "__main__":
     myresult = mycursor.fetchall()
 
     for x in myresult:
-        print(x)
+        if x[1][0] == 'N':
+            print(x)
 
     mycursor.close()
     db.close()
