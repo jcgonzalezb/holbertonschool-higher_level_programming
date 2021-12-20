@@ -4,13 +4,11 @@ Write a script that prints all City objects from the database
 """
 
 
-import sqlalchemy as db
-from sqlalchemy.engine.url import URL
 from sys import argv
 from sqlalchemy import create_engine, asc
 from model_state import Base, State
 from model_city import City
-from sqlalchemy.orm import sessionmaker, relationship
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
 
@@ -23,9 +21,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(State).filter(City.state_id.__eq__(State.id)).order_by(asc(City.id))
+    myquery = session.query(State.name, City.id, City.name).filter(
+        City.state_id == State.id).order_by(asc(City.id))
 
-    for _row in query.all():
-        print(_row.name, _row.cities.id, _row.name)
+    for q in myquery:
+        print("{:s}: ({:d}) {:s}".format(q[0], q[1], q[2]))
 
     session.close()
