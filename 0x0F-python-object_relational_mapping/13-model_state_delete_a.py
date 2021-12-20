@@ -22,8 +22,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    x = session.query(State).get(2)
-    x.name = 'New Mexico'
+    x = session.query(State).filter(State.name.like('%a%'))
+
+    for _row in x.all():
+        print('{:d}: {:s}'.format(_row.id, _row.name))
+
     session.commit()
 
     session.close()
