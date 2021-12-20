@@ -25,7 +25,7 @@ if __name__ == "__main__":
     x = session.query(State).filter(State.name.like('%a%'))
 
     for _row in x.all():
-        print('{:d}: {:s}'.format(_row.id, _row.name))
+        session.delete(_row)
 
     session.commit()
 
