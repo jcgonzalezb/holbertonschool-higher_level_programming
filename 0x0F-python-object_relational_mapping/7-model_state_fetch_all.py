@@ -4,32 +4,25 @@ Write a script that lists all State objects from the database.
 """
 
 
-import sqlalchemy as db
-from sqlalchemy.engine.url import URL
 from sys import argv
 from sqlalchemy import create_engine, asc
 from model_state import Base, State
-
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
 
-    engine = db.create_engine(
-        db.engine.url.URL.create(
-            drivername='mysql',
-            username=argv[1],
-            password=argv[2],
-            host='localhost',
-            port=3306,
-            database=argv[3]))
+    username = argv[1]
+    passwrd = argv[2]
+    database = argv[3]
 
-    meta_data = db.MetaData(bind=engine)
-    db.MetaData.reflect(meta_data)
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        username, passwrd, database), pool_pre_ping=True)
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-    STATES = meta_data.tables['states']
+    myquery = session.query(State).order_by(asc(State.id))
 
-    myquery = db.select([STATES]).order_by(asc(STATES.c.id))
+    for q in myquery.all():
+        print('{:d}: {:s}'.format(q.id, q.name))
 
-    myresult = engine.execute(myquery).fetchall()
-
-    for i, j in myresult:
-        print("{}: {}". format(i, j))
+    session.close()
