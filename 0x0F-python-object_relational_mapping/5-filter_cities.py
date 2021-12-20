@@ -23,8 +23,8 @@ if __name__ == "__main__":
 
     myquery = """SELECT cities.name \
             FROM cities, states \
-			WHERE states.id = cities.state_id \
-			AND states.name = %s ORDER BY cities.id ASC"""
+            WHERE states.id = cities.state_id \
+            AND states.name = %s ORDER BY cities.id ASC"""
 
     mycursor.execute(myquery, (argv[4],))
 
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     for values in myresult:
         for i in values:
             string.append(i)
-    
+
     print(*string, sep=', ')
     mycursor.close()
     db.close()
