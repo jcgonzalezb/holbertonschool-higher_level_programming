@@ -1,26 +1,17 @@
-# JavaScript - Objects, Scopes and Closures
+# Python - Object-relational mapping
 
-## Description of the files inside this folder:
+## Description:
 
-0. An empty class Rectangle that defines a rectangle.
-1. A class Rectangle that defines a rectangle.
-2. A class Rectangle that defines a rectangle.
-3. A class Rectangle that defines a rectangle.
-4. A class Rectangle that defines a rectangle.
-5. A class Square that defines a square and inherits from Rectangle.
-6. A class Square that defines a square and inherits from Square.
-7. Function that returns the number of occurrences in a list.
-8. Function that returns the reversed version of a list.
-9. Function that prints the number of arguments already printed and the new argument value.
-10. Function that converts a number from base 10 to another base passed as argument.
+In this repository are exercises in which the module MySQL is used to connect to a MySQL database and execute your SQL queries. Also, there are exercises in which the module SQLAlchemy, an Object Relational Mapper (ORM), is applied.
 
 ## Languages and Tools:
 
 - OS: Ubuntu 20.04 LTS
-- Language: Javascript, Node v14.
-- Style guidelines: [Javascript Standard](https://standardjs.com/rules.html) || [Javascript Semistandard](https://github.com/Flet/semistandard)
+- Language: Python 3.8.10
+- Databases: MySQL 8.0, MySQLdb v2.1.0, sqlAlchemy v1.4.28
+- Style guidelines: [PEP 8 (version 1.7)](https://www.python.org/dev/peps/pep-0008/)
 
-<p align="left"> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> </p>
+<p align="left"> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
 
 
 ## Author
