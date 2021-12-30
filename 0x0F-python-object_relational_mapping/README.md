@@ -2,14 +2,14 @@
 
 ## Description:
 
-In this repository are exercises in which the module MySQL is used to connect to a MySQL database and execute your SQL queries. Also, there are exercises in which the module SQLAlchemy, an Object Relational Mapper (ORM), is applied.
+In this repository are exercises in which the module MySQL is used to connect to a MySQL database and execute SQL queries. Also, there are exercises in which the module SQLAlchemy, an Object Relational Mapper (ORM), is applied.
 
 ## Languages and Tools:
 
 - OS: Ubuntu 20.04 LTS
 - Language: Python 3.8.10
 - Databases: MySQL 8.0, MySQLdb v2.1.0, sqlAlchemy v1.4.28
-- Style guidelines: [PEP 8 (version 1.7)](https://www.python.org/dev/peps/pep-0008/)
+- Style guidelines: [PEP 8](https://www.python.org/dev/peps/pep-0008/)
 
 <p align="left"> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
 
