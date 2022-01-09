@@ -22,4 +22,4 @@ if __name__ == "__main__":
     with urllib.request.urlopen(URL, data) as response:
         response_text = response.read()
         string = response_text.decode('utf-8')
-        print("Your email is: {}".format(string))
+        print(string)
