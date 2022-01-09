@@ -8,10 +8,6 @@ import sys
 
 if __name__ == "__main__":
 
-    with urllib.request.urlopen('https://intranet.hbtn.io/status') as response:
-        data = response.read()
-        print('Body response:')
-        print("\t- type: {}".format(type(data)))
-        print("\t- content: {}".format(data))
-        string = data.decode('utf-8')
-        print("\t- utf8 content: {}".format(string))
+    argv = sys.argv[1]
+    with urllib.request.urlopen(argv) as response:
+        print(response.info()["X-Request-Id"])
