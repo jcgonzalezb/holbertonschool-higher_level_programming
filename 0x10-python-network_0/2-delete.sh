@@ -1,3 +1,3 @@
 #!/bin/bash
-# Script that takes in a URL, sends a request to that URL, and displays only body of a 200 status code response.
-curl -sL "$1"
+# Script  that sends a DELETE request to the URL passed as the first argument and displays the body of the response.
+curl -sX DELETE "$1"
