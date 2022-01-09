@@ -7,6 +7,6 @@ if __name__ == "__main__":
         data = response.read()
         print("Body response:")
         print("	- type: {}".format(type(data)))
-        print("	- content: {}".format(response.peek()))
+        print("	- content: {}".format(data))
         html = data.decode('utf-8')
         print("	- utf8 content: {}".format(html))
