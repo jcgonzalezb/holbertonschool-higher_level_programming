@@ -13,4 +13,4 @@ if __name__ == "__main__":
     email = sys.argv[2]
     response_text = requests.post(URL, data={"email": email})
     string = response_text.decode('utf-8')
-    print(string)
+    print("Your email is: {}".format(string))
