@@ -12,9 +12,8 @@ if __name__ == "__main__":
 
     URL = sys.argv[1]
 
-    for url in [URL]:
-        try:
-            response = requests.get(url)
-            response.raise_for_status()
-        except HTTPError as http_err:
-            print("Error code: {}".format(http_err))
+    try:
+        response = requests.get(URL)
+        response.raise_for_status()
+    except HTTPError as http_err:
+        print("Error code: {}".format(http_err))
