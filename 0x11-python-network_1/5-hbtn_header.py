@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 """
-Python script that fetches https://intranet.hbtn.io/status.
+Python script  that takes in a URL, sends a request to the URL
+and displays the value of the variable X-Request-Id in the
+response header.
 """
 import requests
+import sys
 
 if __name__ == "__main__":
 
-    URL = 'https://intranet.hbtn.io/status'
+    URL = sys.argv[1]
+
     response = requests.get(URL)
-    data = response.content
-    string = data.decode('utf-8')
-    print('Body response:')
-    print("\t- type: {}".format(type(string)))
-    print("\t- content: {}".format(string))
+    print(response.headers['X-Request-Id'])
