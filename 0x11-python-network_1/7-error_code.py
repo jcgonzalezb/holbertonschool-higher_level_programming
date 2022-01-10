@@ -14,3 +14,12 @@ if __name__ == "__main__":
     response_text = requests.post(URL, data={"email": email})
     string = response_text.decode('utf-8')
     print("Your email is: {}".format(string))
+
+
+    try:
+        with urllib.request.urlopen(URL) as response:
+            response_text = response.read()
+            string = response_text.decode('utf-8')
+            print(string)
+    except urllib.error.HTTPError as e:
+        print("Error code: {}".format(e.code))
