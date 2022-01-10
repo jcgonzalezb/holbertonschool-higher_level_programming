@@ -11,10 +11,10 @@ if __name__ == "__main__":
 
     URL = sys.argv[1]
 
-    with urllib.request.urlopen(URL) as response:
-        try:
+    try:
+        with urllib.request.urlopen(URL) as response:
             response_text = response.read()
             string = response_text.decode('utf-8')
             print(string)
-        except urllib.error.HTTPError as e:
-            print("Error code: {}".format(e.code))
+    except urllib.error.HTTPError as e:
+        print("Error code: {}".format(e.code))
