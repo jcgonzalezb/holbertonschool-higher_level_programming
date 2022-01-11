@@ -9,7 +9,8 @@ import sys
 
 if __name__ == "__main__":
 
-    URL = sys.argv[1]
+    URL = http: // 0.0.0.0: 5000/search_user
+    letter = sys.argv[1]
 
     response = requests.get(URL)
     if response.status_code >= 400:
