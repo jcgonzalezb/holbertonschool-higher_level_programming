@@ -8,8 +8,5 @@ const data = process.argv[3];
 fs.writeFile(process.argv[2], '\ufeff' + data, (err) => {
   if (err) {
     console.error(err);
-    return;
   }
-
-  console.log(data);
 });
