@@ -3,7 +3,9 @@
 
 const fs = require('fs');
 
-fs.readFile(process.argv[2], 'utf-8', (err, data) => {
+const data = process.argv[3]
+
+fs.writeFile(process.argv[2], data, (err) => {
   if (err) {
     console.error(err);
     return;
