@@ -1,19 +1,26 @@
 #!/usr/bin/node
-// Write a script that gets the contents of a webpage and stores it in a file.
+// Write a script that computes the number of tasks completed by user id.
 
 const url = process.argv[2];
-const filename = process.argv[3];
 const request = require('request');
 
-request(url, (err, resp, body) => {
+request(url, function (err, response, body) {
   if (err) {
     console.log(err);
-  } else {
-    const fs = require('fs');
-    fs.writeFile(filename, body, 'utf-8', (err) => {
-      if (err) {
-        console.log(err);
+  } else if (response.statusCode === 200) {
+    const dic = {};
+    const tasks = JSON.parse(body);
+    for (const i in tasks) {
+      if (tasks[i].completed) {
+        if (dic[tasks[i].userId] === undefined) {
+          dic[tasks[i].userId] = 1;
+        } else {
+          dic[tasks[i].userId]++;
+        }
       }
-    });
+    }
+    console.log(dic);
+  } else {
+    console.log('Error code: ' + response.statusCode);
   }
 });
