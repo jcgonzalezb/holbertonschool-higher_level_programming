@@ -16,7 +16,7 @@
 ## Languages and Tools:
 
 - OS: Ubuntu 20.04 LTS
-- Language: Python 3.8.10 and Bash script.
+- Languages: Python 3.8.10 and Bash script.
 - Style guidelines: [PEP 8](https://www.python.org/dev/peps/pep-0008/)
 - Style guidelines: [Shellscript](https://github.com/koalaman/shellcheck)
 
