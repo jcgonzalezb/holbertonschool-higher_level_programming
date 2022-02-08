@@ -14,7 +14,6 @@
 9. Python script that takes your GitHub credentials (username and password)
 and uses the GitHub API to display your id.
 
-
 ## Languages and Tools:
 
 - OS: Ubuntu 20.04 LTS
