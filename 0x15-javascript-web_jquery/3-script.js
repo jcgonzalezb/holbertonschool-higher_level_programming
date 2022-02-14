@@ -3,7 +3,7 @@
 $(document).ready(function () {
   $('div').on({
     click: function () {
-      $(this).css('color', 'red');
+      $('header').addClass('red');
     }
   });
 });
