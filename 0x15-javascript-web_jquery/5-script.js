@@ -1,9 +1,9 @@
 #!/usr/bin/node
-// Write a JavaScript script that toggles the class of the <header> element when the user clicks on the tag DIV#toggle_header.
+// Write a JavaScript script that adds a <li> element to a list when the user clicks on the tag #add_item.
 $(document).ready(function () {
   $('div').on({
     click: function () {
-      $('header').toggleClass('green red');
+      $('UL.my_list').append('<li>Item</li>');
     }
   });
 });
