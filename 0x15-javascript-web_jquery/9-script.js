@@ -5,9 +5,6 @@ $.ajax({
   type: 'GET',
   url: 'https://fourtonfish.com/hellosalut/?lang=fr',
   success: function (data) {
-    const films = data.results;
-    $.each(films, function (i, movie) {
-      $('#list_movies').append('<li>' + movie.title + '</li>');
-    });
+    $('DIV#hello').text(data.hello);
   }
 });
