@@ -1,9 +1,9 @@
 #!/usr/bin/node
-// Write a JavaScript script that adds a <li> element to a list when the user clicks on the tag #add_item.
+// Write a JavaScript script that updates the text of the <header> element to New Header!!! when the user clicks on DIV#update_header.
 $(document).ready(function () {
   $('div').on({
     click: function () {
-      $('UL.my_list').append('<li>Item</li>');
+      $('header').text('New Header!!!');
     }
   });
 });
