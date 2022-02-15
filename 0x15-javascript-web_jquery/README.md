@@ -4,8 +4,8 @@
 
 - html_files: Folder with main programs to showcase sample function usage.
 
-0. Script that updates the text color of the "<header>" element to red (#FF0000). Must use document.querySelector.
-1. Script that updates the text color of the '<header>' element to red (#FF0000).
+0. Script that updates the text color of the (header) element to red (#FF0000). Must use document.querySelector.
+1. Script that updates the text color of the (<header>) element to red (#FF0000).
 2. script that updates the text color of the '<header>' element to red (#FF0000) when the user clicks on the tag DIV#red_header.
 3. Script that adds the class red to the '<header>' element when the user clicks on the tag DIV#red_header.
 4. Script that toggles the class of the '<header>' element when the user clicks on the tag DIV#toggle_header.
