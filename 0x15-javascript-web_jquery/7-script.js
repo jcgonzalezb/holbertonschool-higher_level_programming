@@ -1,4 +1,3 @@
-#!/usr/bin/node
 // Write a JavaScript script that fetches the character name from a URL.
 
 $.ajax({

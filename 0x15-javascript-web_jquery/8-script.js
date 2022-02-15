@@ -1,4 +1,3 @@
-#!/usr/bin/node
 // Write a JavaScript script that fetches and lists the title for all movies by using a URL.
 
 $.ajax({
