@@ -5,6 +5,9 @@ $.ajax({
   type: 'GET',
   url: 'https://swapi-api.hbtn.io/api/films/?format=json',
   success: function (data) {
-    $('div').text(data.name);
+    const films = data.results;
+    $.each(films, function (i, movie) {
+      $('#list_movies').append('<li>' + movie.title + '</li>');
+    });
   }
 });
