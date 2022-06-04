@@ -1,14 +1,23 @@
-0. Print a list of integers
-1. Secure access to an element in a list
-2. Replace element
-3. Print a list of integers... in reverse!
-4. Replace in a copy
-5. Can you C me now?
-6. Lists of lists = Matrix
-7. Tuples addition
-8. More returns!
-9. Find the max
-10. Only by 2
-11. Delete at
-12. Switch
-13. Linked list palindrome
+# Python, C - import & modules
+
+## Description of the files inside this folder:
+
+
+0. 
+
+
+## Languages and Tools:
+
+- OS: Ubuntu 20.04 LTS
+- Language: Python 3.8.10 and C17 (C standard revision) (__STDC_VERSION__ --> 201710L)
+- Style guidelines: [PEP 8](https://www.python.org/dev/peps/pep-0008/)
+- Style guidelines: [Betty style](https://github.com/holbertonschool/Betty/wiki)
+
+<p align="left"> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
+<p align="left"> <a href="https://www.cprogramming.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> </p>
+
+
+## Author
+
+- Juan Camilo González <a href="https://twitter.com/juankter" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="juankter" height="30" width="40" /></a>
+<a href="https://bit.ly/2MBNR0t" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://bit.ly/2mbnr0t" height="30" width="40" /></a>
