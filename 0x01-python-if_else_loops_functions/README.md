@@ -1,4 +1,4 @@
-# Python, Bash, C - if/else, loops, functions
+# Python, C - if/else, loops, functions
 
 ## Description of the files inside this folder:
 
