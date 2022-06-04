@@ -1,4 +1,4 @@
-# Python - Python - import & modules
+# Python - import & modules
 
 ## Description of the files inside this folder:
 
