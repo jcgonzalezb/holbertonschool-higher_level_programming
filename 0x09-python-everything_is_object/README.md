@@ -6,7 +6,7 @@
 
 - Exercise 19. Write a function def copy_list(l): that returns a copy of a list.
 
-- Write a blog post about everything you just learned / this project is covering. Your blog post should be articulated this way (one paragraph per item):
+- Write a blog post about python objects regarding immutable and mutable objects.
 
 ## Blog location
 
