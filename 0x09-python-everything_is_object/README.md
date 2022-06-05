@@ -10,8 +10,8 @@
 
 ## Blog location
 
-[Mutable and Immutable objects in Python](https://3388.medium.com/mutable-and-immutable-objects-in-python-34617c0cdc0e)
-[Mutable and Immutable objects in Python](https://www.linkedin.com/posts/juancgonzalezbautista_mutable-and-immutable-objects-in-python-activity-6851891961092288512-r2r7)
+- [Mutable and Immutable objects in Python](https://3388.medium.com/mutable-and-immutable-objects-in-python-34617c0cdc0e)
+- [Mutable and Immutable objects in Python](https://www.linkedin.com/posts/juancgonzalezbautista_mutable-and-immutable-objects-in-python-activity-6851891961092288512-r2r7)
 
 ## Languages and Tools:
 
