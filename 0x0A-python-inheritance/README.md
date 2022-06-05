@@ -15,13 +15,6 @@
 10. Write a class Square that inherits from Rectangle (9-rectangle.py).
 11. Write a class Square that inherits from Rectangle (9-rectangle.py). (task based on 10-square.py).
 
-
-
-## Blog location
-
-- [Mutable and Immutable objects in Python](https://3388.medium.com/mutable-and-immutable-objects-in-python-34617c0cdc0e)
-- [Mutable and Immutable objects in Python](https://www.linkedin.com/posts/juancgonzalezbautista_mutable-and-immutable-objects-in-python-activity-6851891961092288512-r2r7)
-
 ## Languages and Tools:
 
 - OS: Ubuntu 20.04 LTS
