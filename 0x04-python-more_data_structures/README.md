@@ -22,7 +22,7 @@
 ## Languages and Tools:
 
 - OS: Ubuntu 20.04 LTS
-- Language: Python 3.8.10 and C17 (C standard revision) (__STDC_VERSION__ --> 201710L)
+- Language: Python 3.8.10
 - Style guidelines: [PEP 8](https://www.python.org/dev/peps/pep-0008/)
 
 
