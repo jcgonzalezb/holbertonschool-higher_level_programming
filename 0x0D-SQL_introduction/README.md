@@ -71,6 +71,12 @@
 - Results should display the score and the name (in this order)
 - Records should be listed by descending score
 - The database name will be passed as an argument to the mysql command
+17. Script that converts hbtn_0c_0 database to UTF8 (utf8mb4, collate utf8mb4_unicode_ci) in your MySQL server.
+18. Script that displays the average temperature (Fahrenheit) by city ordered by temperature (descending).
+19. Write a script that displays the top 3 of cities temperature during July and August ordered by temperature (descending)
+20. Write a script that displays the max temperature of each state (ordered by State name).
+
+
 
 
 ## Languages and Tools:
